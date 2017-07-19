@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target 'sentry-ios-cocoapods' do
+    #pod 'Sentry', :path => '~/Projects/sentry-cocoa', :subspecs => ['Core', 'KSCrash']
+    pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :subspecs => ['Core', 'KSCrash'], :tag => '3.2.0'
+end

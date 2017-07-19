@@ -1,0 +1,16 @@
+
+clean-project:
+	@echo "--> Creating new react-native project"
+	rm -rf AwesomeProject/ || true
+	react-native init AwesomeProject
+	(cd AwesomeProject; yarn add react-native-sentry)
+	# rm -rf AwesomeProject/node_modules/react-native-sentry/scripts/*
+	# rm -rf AwesomeProject/node_modules/react-native-sentry/lib/*
+	# cp -r ../../react-native-sentry/scripts/* AwesomeProject/node_modules/react-native-sentry/scripts/
+	# cp -r ../../react-native-sentry/lib/* AwesomeProject/node_modules/react-native-sentry/lib/
+	cp sentry.properties AwesomeProject/ios/.
+	cp sentry.properties AwesomeProject/android/.
+	cp index.js AwesomeProject/index.ios.js
+	cp index.js AwesomeProject/index.android.js
+	(cd AwesomeProject; react-native link react-native-sentry)
+
