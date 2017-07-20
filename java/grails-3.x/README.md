@@ -15,7 +15,7 @@ Now, visit `http://localhost:8080/hello/index` in your browser and an
 `SENTRY_DSN`.
 
 See
-[grails-app/conf/logback.groovy](https://github.com/getsentry/examples/blob/master/java/grails-3.x/grails-app/conf/logback.groovy#L14-L15)
+[grails-app/conf/logback.groovy](https://github.com/getsentry/examples/blob/master/java/grails-3.x/grails-app/conf/logback.groovy#L13-L18)
 for example logger configuration and
 [build.gradle](https://github.com/getsentry/examples/blob/master/java/grails-3.x/build.gradle#L44)
 for the dependency on `io.sentry:sentry-logback`.
