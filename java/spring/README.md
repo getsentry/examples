@@ -1,5 +1,4 @@
-Sentry Spring Boot Example
-=========================
+# Sentry Spring Boot Example
 
 This project contains an example Sentry integration with Spring Boot. It uses
 the default `logback` logging framework to send log level `WARN` and above

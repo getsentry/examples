@@ -1,4 +1,4 @@
-# Sentry-Android Example
+# Sentry Android Example
 
 This is example is best run inside of Android Studio.
 

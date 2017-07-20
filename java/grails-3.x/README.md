@@ -1,5 +1,4 @@
-Sentry Grails Example
-====================
+# Sentry Grails Example
 
 This project contains an example Sentry integration with Grails. It uses
 the default `logback` logging framework to send log level `WARN` and above
