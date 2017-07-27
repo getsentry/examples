@@ -11,7 +11,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Button
+  Button,
+  TextInput
 } from 'react-native';
 
 import {
@@ -44,7 +45,24 @@ Sentry.setUserContext({
   }
 });
 
+Sentry.captureBreadcrumb({
+  message: 'Item added to shopping cart',
+  category: 'action',
+  data: {
+    isbn: '978-1617290541',
+    cartSize: '3'
+  }
+});
+
 export default class AwesomeProject extends Component {
+  constructor() {
+    super();
+    this.state = { text: '' };
+    Sentry.setEventSentSuccessfully((event) => {
+      this.setState({text: JSON.stringify(event)});
+    });
+  }
+
   _sendMessage() {
     Sentry.captureMessage("TEST message", {
       level: SentrySeverity.Warning
@@ -66,17 +84,25 @@ export default class AwesomeProject extends Component {
           style={{fontSize: 20, color: 'green'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._throwError()}
+          accessibilityLabel={'throw error'}
           title="throw error!" />
         <Button
           style={{fontSize: 20, color: 'green'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._nativeCrash()}
+          accessibilityLabel={'native crash'}
           title="native crash!" />
         <Button
           style={{fontSize: 20, color: 'green'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._sendMessage()}
+          accessibilityLabel={'send message'}
           title="send message" />
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1, width: '80%'}}
+          accessibilityLabel={'textarea'}
+          value={this.state.text}
+        />
       </View>
     );
   }
