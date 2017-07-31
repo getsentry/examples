@@ -8,11 +8,12 @@ import React, {Component} from 'react';
 
 import {AppRegistry, StyleSheet, Text, View, Button, TextInput} from 'react-native';
 
-import {Sentry, SentrySeverity} from 'react-native-sentry';
+import {Sentry, SentrySeverity, SentryLog} from 'react-native-sentry';
 
 Sentry.config(
   'https://6890c2f6677340daa4804f8194804ea2:8ce0e61531284b1c8f39318c974ad264@sentry.io/148053',
   {
+    logLevel: SentryLog.Verbose,
     deactivateStacktraceMerging: true
   }
 ).install();
