@@ -13,8 +13,7 @@ import {Sentry, SentrySeverity, SentryLog} from 'react-native-sentry';
 Sentry.config(
   'https://6890c2f6677340daa4804f8194804ea2:8ce0e61531284b1c8f39318c974ad264@sentry.io/148053',
   {
-    logLevel: SentryLog.Verbose,
-    deactivateStacktraceMerging: true
+    logLevel: SentryLog.Verbose
   }
 ).install();
 
@@ -66,6 +65,15 @@ export default class AwesomeProject extends Component {
   _throwError() {
     throw new Error('Sentry: Test throw error');
   }
+  _setVersion() {
+    Sentry.setVersion('1337');
+  }
+  _setRelease() {
+    Sentry.setRelease('myversion');
+  }
+  _setDist() {
+    Sentry.setDist('500');
+  }
   _nativeCrash() {
     Sentry.nativeCrash();
   }
@@ -73,6 +81,27 @@ export default class AwesomeProject extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native Sentry example</Text>
+        <Button
+          style={{fontSize: 20, color: 'green'}}
+          styleDisabled={{color: 'red'}}
+          onPress={() => this._setVersion()}
+          accessibilityLabel={'set version'}
+          title="Set version"
+        />
+        <Button
+          style={{fontSize: 20, color: 'green'}}
+          styleDisabled={{color: 'red'}}
+          onPress={() => this._setRelease()}
+          accessibilityLabel={'set release'}
+          title="Set release"
+        />
+        <Button
+          style={{fontSize: 20, color: 'green'}}
+          styleDisabled={{color: 'red'}}
+          onPress={() => this._setDist()}
+          accessibilityLabel={'set dist'}
+          title="Set dist"
+        />
         <Button
           style={{fontSize: 20, color: 'green'}}
           styleDisabled={{color: 'red'}}
