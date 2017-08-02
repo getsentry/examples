@@ -3089,9 +3089,9 @@ react-devtools-core@2.3.1:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-sentry@^0.14.10:
-  version "0.14.10"
-  resolved "https://registry.yarnpkg.com/react-native-sentry/-/react-native-sentry-0.14.10.tgz#90bb20cdb8a064cb3a1816ae52dc68dd73a04647"
+react-native-sentry@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/react-native-sentry/-/react-native-sentry-0.15.1.tgz#fd5e685faa8de8fc4f472703b57e023d45ee53aa"
   dependencies:
     chalk "^1.1.1"
     glob "7.1.1"
