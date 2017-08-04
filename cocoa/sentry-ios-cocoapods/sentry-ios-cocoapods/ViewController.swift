@@ -10,7 +10,7 @@ import UIKit
 import Sentry
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         }
         Client.shared?.enableAutomaticBreadcrumbTracking()
     }
-
+    
     @IBAction func sendMessage(_ sender: Any) {
         let event = Event(level: .debug)
         event.message = "Test Message"
