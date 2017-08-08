@@ -3,55 +3,73 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		633740B31F1DEA2E00C55F0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633740B21F1DEA2E00C55F0A /* AppDelegate.swift */; };
-		633740B51F1DEA2E00C55F0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633740B41F1DEA2E00C55F0A /* ViewController.swift */; };
-		633740B81F1DEA2E00C55F0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633740B61F1DEA2E00C55F0A /* Main.storyboard */; };
-		633740BA1F1DEA2E00C55F0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633740B91F1DEA2E00C55F0A /* Assets.xcassets */; };
-		633740BD1F1DEA2E00C55F0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633740BB1F1DEA2E00C55F0A /* LaunchScreen.storyboard */; };
-		633740C81F1DEA2F00C55F0A /* sentry_ios_cocoapodsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633740C71F1DEA2F00C55F0A /* sentry_ios_cocoapodsUITests.swift */; };
-		AE9926CAD0933D4F6592D99D /* Pods_sentry_ios_cocoapods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA385F782B6ADAC597AFFF19 /* Pods_sentry_ios_cocoapods.framework */; };
+		326552E27C5D62BB08DF2799 /* Pods_sentry_ios_cocoapods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207E594D9676153EF8FAA84A /* Pods_sentry_ios_cocoapods.framework */; };
+		634B72591F345947007FFB87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B72581F345947007FFB87 /* AppDelegate.swift */; };
+		634B725B1F345947007FFB87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B725A1F345947007FFB87 /* ViewController.swift */; };
+		634B725E1F345947007FFB87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634B725C1F345947007FFB87 /* Main.storyboard */; };
+		634B72601F345947007FFB87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634B725F1F345947007FFB87 /* Assets.xcassets */; };
+		634B72631F345947007FFB87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634B72611F345947007FFB87 /* LaunchScreen.storyboard */; };
+		634B726E1F345947007FFB87 /* sentry_ios_cocoapodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B726D1F345947007FFB87 /* sentry_ios_cocoapodsTests.swift */; };
+		634B72791F345947007FFB87 /* sentry_ios_cocoapodsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B72781F345947007FFB87 /* sentry_ios_cocoapodsUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		633740C41F1DEA2F00C55F0A /* PBXContainerItemProxy */ = {
+		634B726A1F345947007FFB87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 633740A71F1DEA2E00C55F0A /* Project object */;
+			containerPortal = 634B724D1F345947007FFB87 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 633740AE1F1DEA2E00C55F0A;
+			remoteGlobalIDString = 634B72541F345947007FFB87;
+			remoteInfo = "sentry-ios-cocoapods";
+		};
+		634B72751F345947007FFB87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 634B724D1F345947007FFB87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 634B72541F345947007FFB87;
 			remoteInfo = "sentry-ios-cocoapods";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D152A803E4047CC1B405214 /* Pods-sentry-ios-cocoapods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sentry-ios-cocoapods.release.xcconfig"; path = "Pods/Target Support Files/Pods-sentry-ios-cocoapods/Pods-sentry-ios-cocoapods.release.xcconfig"; sourceTree = "<group>"; };
-		55CF38B2B48A749B46D253D0 /* Pods-sentry-ios-cocoapods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sentry-ios-cocoapods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sentry-ios-cocoapods/Pods-sentry-ios-cocoapods.debug.xcconfig"; sourceTree = "<group>"; };
-		633740AF1F1DEA2E00C55F0A /* sentry-ios-cocoapods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sentry-ios-cocoapods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		633740B21F1DEA2E00C55F0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		633740B41F1DEA2E00C55F0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		633740B71F1DEA2E00C55F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		633740B91F1DEA2E00C55F0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		633740BC1F1DEA2E00C55F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		633740BE1F1DEA2E00C55F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		633740C31F1DEA2F00C55F0A /* sentry-ios-cocoapodsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sentry-ios-cocoapodsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		633740C71F1DEA2F00C55F0A /* sentry_ios_cocoapodsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentry_ios_cocoapodsUITests.swift; sourceTree = "<group>"; };
-		633740C91F1DEA2F00C55F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA385F782B6ADAC597AFFF19 /* Pods_sentry_ios_cocoapods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sentry_ios_cocoapods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C9CE84111E4FFA3B37D268B /* Pods-sentry-ios-cocoapods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sentry-ios-cocoapods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sentry-ios-cocoapods/Pods-sentry-ios-cocoapods.debug.xcconfig"; sourceTree = "<group>"; };
+		207E594D9676153EF8FAA84A /* Pods_sentry_ios_cocoapods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sentry_ios_cocoapods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56C57143F5B59B463B28038C /* Pods-sentry-ios-cocoapods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sentry-ios-cocoapods.release.xcconfig"; path = "Pods/Target Support Files/Pods-sentry-ios-cocoapods/Pods-sentry-ios-cocoapods.release.xcconfig"; sourceTree = "<group>"; };
+		634B72551F345947007FFB87 /* sentry-ios-cocoapods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sentry-ios-cocoapods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		634B72581F345947007FFB87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		634B725A1F345947007FFB87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		634B725D1F345947007FFB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		634B725F1F345947007FFB87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		634B72621F345947007FFB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		634B72641F345947007FFB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		634B72691F345947007FFB87 /* sentry-ios-cocoapodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sentry-ios-cocoapodsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		634B726D1F345947007FFB87 /* sentry_ios_cocoapodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentry_ios_cocoapodsTests.swift; sourceTree = "<group>"; };
+		634B726F1F345947007FFB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		634B72741F345947007FFB87 /* sentry-ios-cocoapodsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sentry-ios-cocoapodsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		634B72781F345947007FFB87 /* sentry_ios_cocoapodsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentry_ios_cocoapodsUITests.swift; sourceTree = "<group>"; };
+		634B727A1F345947007FFB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		633740AC1F1DEA2E00C55F0A /* Frameworks */ = {
+		634B72521F345947007FFB87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE9926CAD0933D4F6592D99D /* Pods_sentry_ios_cocoapods.framework in Frameworks */,
+				326552E27C5D62BB08DF2799 /* Pods_sentry_ios_cocoapods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		633740C01F1DEA2F00C55F0A /* Frameworks */ = {
+		634B72661F345947007FFB87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		634B72711F345947007FFB87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,61 +79,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4CEC6F0B21E92666A64F7C0E /* Frameworks */ = {
+		634B724C1F345947007FFB87 = {
 			isa = PBXGroup;
 			children = (
-				FA385F782B6ADAC597AFFF19 /* Pods_sentry_ios_cocoapods.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		633740A61F1DEA2E00C55F0A = {
-			isa = PBXGroup;
-			children = (
-				633740B11F1DEA2E00C55F0A /* sentry-ios-cocoapods */,
-				633740C61F1DEA2F00C55F0A /* sentry-ios-cocoapodsUITests */,
-				633740B01F1DEA2E00C55F0A /* Products */,
-				DC3926F9111FDCAE9A5EF210 /* Pods */,
-				4CEC6F0B21E92666A64F7C0E /* Frameworks */,
+				634B72571F345947007FFB87 /* sentry-ios-cocoapods */,
+				634B726C1F345947007FFB87 /* sentry-ios-cocoapodsTests */,
+				634B72771F345947007FFB87 /* sentry-ios-cocoapodsUITests */,
+				634B72561F345947007FFB87 /* Products */,
+				8EC8EA9C9D2FB72FA585EC47 /* Pods */,
+				7B290C6C0D163A0B9DB41530 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		633740B01F1DEA2E00C55F0A /* Products */ = {
+		634B72561F345947007FFB87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				633740AF1F1DEA2E00C55F0A /* sentry-ios-cocoapods.app */,
-				633740C31F1DEA2F00C55F0A /* sentry-ios-cocoapodsUITests.xctest */,
+				634B72551F345947007FFB87 /* sentry-ios-cocoapods.app */,
+				634B72691F345947007FFB87 /* sentry-ios-cocoapodsTests.xctest */,
+				634B72741F345947007FFB87 /* sentry-ios-cocoapodsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		633740B11F1DEA2E00C55F0A /* sentry-ios-cocoapods */ = {
+		634B72571F345947007FFB87 /* sentry-ios-cocoapods */ = {
 			isa = PBXGroup;
 			children = (
-				633740B21F1DEA2E00C55F0A /* AppDelegate.swift */,
-				633740B41F1DEA2E00C55F0A /* ViewController.swift */,
-				633740B61F1DEA2E00C55F0A /* Main.storyboard */,
-				633740B91F1DEA2E00C55F0A /* Assets.xcassets */,
-				633740BB1F1DEA2E00C55F0A /* LaunchScreen.storyboard */,
-				633740BE1F1DEA2E00C55F0A /* Info.plist */,
+				634B72581F345947007FFB87 /* AppDelegate.swift */,
+				634B725A1F345947007FFB87 /* ViewController.swift */,
+				634B725C1F345947007FFB87 /* Main.storyboard */,
+				634B725F1F345947007FFB87 /* Assets.xcassets */,
+				634B72611F345947007FFB87 /* LaunchScreen.storyboard */,
+				634B72641F345947007FFB87 /* Info.plist */,
 			);
 			path = "sentry-ios-cocoapods";
 			sourceTree = "<group>";
 		};
-		633740C61F1DEA2F00C55F0A /* sentry-ios-cocoapodsUITests */ = {
+		634B726C1F345947007FFB87 /* sentry-ios-cocoapodsTests */ = {
 			isa = PBXGroup;
 			children = (
-				633740C71F1DEA2F00C55F0A /* sentry_ios_cocoapodsUITests.swift */,
-				633740C91F1DEA2F00C55F0A /* Info.plist */,
+				634B726D1F345947007FFB87 /* sentry_ios_cocoapodsTests.swift */,
+				634B726F1F345947007FFB87 /* Info.plist */,
+			);
+			path = "sentry-ios-cocoapodsTests";
+			sourceTree = "<group>";
+		};
+		634B72771F345947007FFB87 /* sentry-ios-cocoapodsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				634B72781F345947007FFB87 /* sentry_ios_cocoapodsUITests.swift */,
+				634B727A1F345947007FFB87 /* Info.plist */,
 			);
 			path = "sentry-ios-cocoapodsUITests";
 			sourceTree = "<group>";
 		};
-		DC3926F9111FDCAE9A5EF210 /* Pods */ = {
+		7B290C6C0D163A0B9DB41530 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				55CF38B2B48A749B46D253D0 /* Pods-sentry-ios-cocoapods.debug.xcconfig */,
-				3D152A803E4047CC1B405214 /* Pods-sentry-ios-cocoapods.release.xcconfig */,
+				207E594D9676153EF8FAA84A /* Pods_sentry_ios_cocoapods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8EC8EA9C9D2FB72FA585EC47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C9CE84111E4FFA3B37D268B /* Pods-sentry-ios-cocoapods.debug.xcconfig */,
+				56C57143F5B59B463B28038C /* Pods-sentry-ios-cocoapods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -123,16 +152,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		633740AE1F1DEA2E00C55F0A /* sentry-ios-cocoapods */ = {
+		634B72541F345947007FFB87 /* sentry-ios-cocoapods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 633740CC1F1DEA2F00C55F0A /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapods" */;
+			buildConfigurationList = 634B727D1F345947007FFB87 /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapods" */;
 			buildPhases = (
-				1AAA4007C843795D7C636339 /* [CP] Check Pods Manifest.lock */,
-				633740AB1F1DEA2E00C55F0A /* Sources */,
-				633740AC1F1DEA2E00C55F0A /* Frameworks */,
-				633740AD1F1DEA2E00C55F0A /* Resources */,
-				11604853B28B2859CD76D017 /* [CP] Embed Pods Frameworks */,
-				2A138CF4EC7046FDB4329F33 /* [CP] Copy Pods Resources */,
+				9EA2AA1335AF418EC02418B9 /* [CP] Check Pods Manifest.lock */,
+				634B72511F345947007FFB87 /* Sources */,
+				634B72521F345947007FFB87 /* Frameworks */,
+				634B72531F345947007FFB87 /* Resources */,
+				E140AA825D2F9896B5D56973 /* [CP] Embed Pods Frameworks */,
+				158F9C269396CCC6EF11DEC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,77 +169,110 @@
 			);
 			name = "sentry-ios-cocoapods";
 			productName = "sentry-ios-cocoapods";
-			productReference = 633740AF1F1DEA2E00C55F0A /* sentry-ios-cocoapods.app */;
+			productReference = 634B72551F345947007FFB87 /* sentry-ios-cocoapods.app */;
 			productType = "com.apple.product-type.application";
 		};
-		633740C21F1DEA2F00C55F0A /* sentry-ios-cocoapodsUITests */ = {
+		634B72681F345947007FFB87 /* sentry-ios-cocoapodsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 633740CF1F1DEA2F00C55F0A /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapodsUITests" */;
+			buildConfigurationList = 634B72801F345947007FFB87 /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapodsTests" */;
 			buildPhases = (
-				633740BF1F1DEA2F00C55F0A /* Sources */,
-				633740C01F1DEA2F00C55F0A /* Frameworks */,
-				633740C11F1DEA2F00C55F0A /* Resources */,
+				634B72651F345947007FFB87 /* Sources */,
+				634B72661F345947007FFB87 /* Frameworks */,
+				634B72671F345947007FFB87 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				633740C51F1DEA2F00C55F0A /* PBXTargetDependency */,
+				634B726B1F345947007FFB87 /* PBXTargetDependency */,
+			);
+			name = "sentry-ios-cocoapodsTests";
+			productName = "sentry-ios-cocoapodsTests";
+			productReference = 634B72691F345947007FFB87 /* sentry-ios-cocoapodsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		634B72731F345947007FFB87 /* sentry-ios-cocoapodsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 634B72831F345947007FFB87 /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapodsUITests" */;
+			buildPhases = (
+				634B72701F345947007FFB87 /* Sources */,
+				634B72711F345947007FFB87 /* Frameworks */,
+				634B72721F345947007FFB87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				634B72761F345947007FFB87 /* PBXTargetDependency */,
 			);
 			name = "sentry-ios-cocoapodsUITests";
 			productName = "sentry-ios-cocoapodsUITests";
-			productReference = 633740C31F1DEA2F00C55F0A /* sentry-ios-cocoapodsUITests.xctest */;
+			productReference = 634B72741F345947007FFB87 /* sentry-ios-cocoapodsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		633740A71F1DEA2E00C55F0A /* Project object */ = {
+		634B724D1F345947007FFB87 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Sentry;
 				TargetAttributes = {
-					633740AE1F1DEA2E00C55F0A = {
-						CreatedOnToolsVersion = 9.0;
+					634B72541F345947007FFB87 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
 					};
-					633740C21F1DEA2F00C55F0A = {
-						CreatedOnToolsVersion = 9.0;
-						TestTargetID = 633740AE1F1DEA2E00C55F0A;
+					634B72681F345947007FFB87 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 634B72541F345947007FFB87;
+					};
+					634B72731F345947007FFB87 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 634B72541F345947007FFB87;
 					};
 				};
 			};
-			buildConfigurationList = 633740AA1F1DEA2E00C55F0A /* Build configuration list for PBXProject "sentry-ios-cocoapods" */;
-			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = en;
+			buildConfigurationList = 634B72501F345947007FFB87 /* Build configuration list for PBXProject "sentry-ios-cocoapods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 633740A61F1DEA2E00C55F0A;
-			productRefGroup = 633740B01F1DEA2E00C55F0A /* Products */;
+			mainGroup = 634B724C1F345947007FFB87;
+			productRefGroup = 634B72561F345947007FFB87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				633740AE1F1DEA2E00C55F0A /* sentry-ios-cocoapods */,
-				633740C21F1DEA2F00C55F0A /* sentry-ios-cocoapodsUITests */,
+				634B72541F345947007FFB87 /* sentry-ios-cocoapods */,
+				634B72681F345947007FFB87 /* sentry-ios-cocoapodsTests */,
+				634B72731F345947007FFB87 /* sentry-ios-cocoapodsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		633740AD1F1DEA2E00C55F0A /* Resources */ = {
+		634B72531F345947007FFB87 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				633740BD1F1DEA2E00C55F0A /* LaunchScreen.storyboard in Resources */,
-				633740BA1F1DEA2E00C55F0A /* Assets.xcassets in Resources */,
-				633740B81F1DEA2E00C55F0A /* Main.storyboard in Resources */,
+				634B72631F345947007FFB87 /* LaunchScreen.storyboard in Resources */,
+				634B72601F345947007FFB87 /* Assets.xcassets in Resources */,
+				634B725E1F345947007FFB87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		633740C11F1DEA2F00C55F0A /* Resources */ = {
+		634B72671F345947007FFB87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		634B72721F345947007FFB87 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,37 +282,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		11604853B28B2859CD76D017 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sentry-ios-cocoapods/Pods-sentry-ios-cocoapods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1AAA4007C843795D7C636339 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2A138CF4EC7046FDB4329F33 /* [CP] Copy Pods Resources */ = {
+		158F9C269396CCC6EF11DEC8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,49 +297,92 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sentry-ios-cocoapods/Pods-sentry-ios-cocoapods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9EA2AA1335AF418EC02418B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E140AA825D2F9896B5D56973 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sentry-ios-cocoapods/Pods-sentry-ios-cocoapods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		633740AB1F1DEA2E00C55F0A /* Sources */ = {
+		634B72511F345947007FFB87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				633740B51F1DEA2E00C55F0A /* ViewController.swift in Sources */,
-				633740B31F1DEA2E00C55F0A /* AppDelegate.swift in Sources */,
+				634B725B1F345947007FFB87 /* ViewController.swift in Sources */,
+				634B72591F345947007FFB87 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		633740BF1F1DEA2F00C55F0A /* Sources */ = {
+		634B72651F345947007FFB87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				633740C81F1DEA2F00C55F0A /* sentry_ios_cocoapodsUITests.swift in Sources */,
+				634B726E1F345947007FFB87 /* sentry_ios_cocoapodsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		634B72701F345947007FFB87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				634B72791F345947007FFB87 /* sentry_ios_cocoapodsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		633740C51F1DEA2F00C55F0A /* PBXTargetDependency */ = {
+		634B726B1F345947007FFB87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 633740AE1F1DEA2E00C55F0A /* sentry-ios-cocoapods */;
-			targetProxy = 633740C41F1DEA2F00C55F0A /* PBXContainerItemProxy */;
+			target = 634B72541F345947007FFB87 /* sentry-ios-cocoapods */;
+			targetProxy = 634B726A1F345947007FFB87 /* PBXContainerItemProxy */;
+		};
+		634B72761F345947007FFB87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 634B72541F345947007FFB87 /* sentry-ios-cocoapods */;
+			targetProxy = 634B72751F345947007FFB87 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		633740B61F1DEA2E00C55F0A /* Main.storyboard */ = {
+		634B725C1F345947007FFB87 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				633740B71F1DEA2E00C55F0A /* Base */,
+				634B725D1F345947007FFB87 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		633740BB1F1DEA2E00C55F0A /* LaunchScreen.storyboard */ = {
+		634B72611F345947007FFB87 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				633740BC1F1DEA2E00C55F0A /* Base */,
+				634B72621F345947007FFB87 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -315,19 +390,17 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		633740CA1F1DEA2F00C55F0A /* Debug */ = {
+		634B727B1F345947007FFB87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -335,21 +408,16 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -363,28 +431,27 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		633740CB1F1DEA2F00C55F0A /* Release */ = {
+		634B727C1F345947007FFB87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -392,21 +459,16 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -414,43 +476,70 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		633740CD1F1DEA2F00C55F0A /* Debug */ = {
+		634B727E1F345947007FFB87 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55CF38B2B48A749B46D253D0 /* Pods-sentry-ios-cocoapods.debug.xcconfig */;
+			baseConfigurationReference = 1C9CE84111E4FFA3B37D268B /* Pods-sentry-ios-cocoapods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "sentry-ios-cocoapods/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.sentry.sentry-ios-cocoapods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		633740CE1F1DEA2F00C55F0A /* Release */ = {
+		634B727F1F345947007FFB87 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D152A803E4047CC1B405214 /* Pods-sentry-ios-cocoapods.release.xcconfig */;
+			baseConfigurationReference = 56C57143F5B59B463B28038C /* Pods-sentry-ios-cocoapods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "sentry-ios-cocoapods/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.sentry.sentry-ios-cocoapods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		633740D01F1DEA2F00C55F0A /* Debug */ = {
+		634B72811F345947007FFB87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "sentry-ios-cocoapodsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.sentry.sentry-ios-cocoapodsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sentry-ios-cocoapods.app/sentry-ios-cocoapods";
+			};
+			name = Debug;
+		};
+		634B72821F345947007FFB87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "sentry-ios-cocoapodsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.sentry.sentry-ios-cocoapodsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sentry-ios-cocoapods.app/sentry-ios-cocoapods";
+			};
+			name = Release;
+		};
+		634B72841F345947007FFB87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -458,13 +547,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.sentry.sentry-ios-cocoapodsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "sentry-ios-cocoapods";
 			};
 			name = Debug;
 		};
-		633740D11F1DEA2F00C55F0A /* Release */ = {
+		634B72851F345947007FFB87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -472,8 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.sentry.sentry-ios-cocoapodsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "sentry-ios-cocoapods";
 			};
 			name = Release;
@@ -481,32 +568,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		633740AA1F1DEA2E00C55F0A /* Build configuration list for PBXProject "sentry-ios-cocoapods" */ = {
+		634B72501F345947007FFB87 /* Build configuration list for PBXProject "sentry-ios-cocoapods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				633740CA1F1DEA2F00C55F0A /* Debug */,
-				633740CB1F1DEA2F00C55F0A /* Release */,
+				634B727B1F345947007FFB87 /* Debug */,
+				634B727C1F345947007FFB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		633740CC1F1DEA2F00C55F0A /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapods" */ = {
+		634B727D1F345947007FFB87 /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				633740CD1F1DEA2F00C55F0A /* Debug */,
-				633740CE1F1DEA2F00C55F0A /* Release */,
+				634B727E1F345947007FFB87 /* Debug */,
+				634B727F1F345947007FFB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		633740CF1F1DEA2F00C55F0A /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapodsUITests" */ = {
+		634B72801F345947007FFB87 /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapodsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				633740D01F1DEA2F00C55F0A /* Debug */,
-				633740D11F1DEA2F00C55F0A /* Release */,
+				634B72811F345947007FFB87 /* Debug */,
+				634B72821F345947007FFB87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		634B72831F345947007FFB87 /* Build configuration list for PBXNativeTarget "sentry-ios-cocoapodsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				634B72841F345947007FFB87 /* Debug */,
+				634B72851F345947007FFB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 633740A71F1DEA2E00C55F0A /* Project object */;
+	rootObject = 634B724D1F345947007FFB87 /* Project object */;
 }

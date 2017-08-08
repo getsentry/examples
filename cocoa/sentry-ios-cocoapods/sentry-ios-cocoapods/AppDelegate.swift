@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  sentry-ios-cocoapods
 //
-//  Created by Daniel Griesser on 18.07.17.
+//  Created by Daniel Griesser on 04.08.17.
 //  Copyright © 2017 Sentry. All rights reserved.
 //
 
