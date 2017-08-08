@@ -2,7 +2,7 @@
 clean-project: #this is meant to be called from make react-native appium make file
 	@echo "--> Creating new react-native project"
 	rm -rf AwesomeProject/ || true
-	react-native init AwesomeProject
+	react-native init AwesomeProject --version react-native@0.46.4
 	(cd AwesomeProject; yarn add react-native-sentry)
 	rm -rf AwesomeProject/node_modules/react-native-sentry/scripts/*
 	# rm -rf AwesomeProject/node_modules/react-native-sentry/lib/*
