@@ -4,7 +4,6 @@ clean-project: #this is meant to be called from make react-native appium make fi
 	rm -rf AwesomeProject/ || true
 	react-native init AwesomeProject --version react-native@0.46.4
 	(cd AwesomeProject; yarn add react-native-sentry)
-	(cd AwesomeProject; yarn remove babel-preset-react-native && yarn add babel-preset-react-native@2.1.0)
 	rm -rf AwesomeProject/node_modules/react-native-sentry/scripts/*
 	# rm -rf AwesomeProject/node_modules/react-native-sentry/lib/*
 	cp -r ../../scripts/* AwesomeProject/node_modules/react-native-sentry/scripts/
