@@ -9,6 +9,8 @@ clean-project: #this is meant to be called from make react-native appium make fi
 	# rm -rf AwesomeProject/node_modules/react-native-sentry/lib/*
 	cp -r ../../scripts/* AwesomeProject/node_modules/react-native-sentry/scripts/
 	# cp -r ../../react-native-sentry/lib/* AwesomeProject/node_modules/react-native-sentry/lib/
+	rm AwesomeProject/android/app/build.gradle
+	cp build.gradle AwesomeProject/android/app/build.gradle
 	cp sentry.properties AwesomeProject/ios/.
 	cp sentry.properties AwesomeProject/android/.
 	cp index.js AwesomeProject/index.ios.js
