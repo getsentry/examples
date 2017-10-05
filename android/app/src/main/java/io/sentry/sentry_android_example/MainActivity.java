@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Context ctx = this.getApplicationContext();
         // Use the Sentry DSN (client key) from the Project Settings page on Sentry
-        String sentryDsn = "https://publicKey:secretKey@host:port/1?options";
+        String sentryDsn = "noop://localhost";
 
         // Initialize the Sentry client
         Sentry.init(sentryDsn, new AndroidSentryClientFactory(ctx));
