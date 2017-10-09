@@ -20,6 +20,14 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		global $client;
+
+		// Capture a message
+		$client->captureMessage('my log message');
+
+		// throw error
+		throw new Exception('Division by zero.');
+
 		$this->load->view('welcome_message');
 	}
 }

@@ -1,20 +1,5 @@
 <?php
 
-// Sentry setup
-
-/* *
- * downloaded Sentry-PHP from https://github.com/getsentry/sentry-php/archive/master.zip
- * change path appropriately, or use composer (see https://docs.sentry.io/clients/php/)
-**/
-require_once '<PATH_TO_SENTRY_PHP_MASTER/lib/Raven/Autoloader.php'; 
-// register/setup Raven so uncaught exceptions are caught
-Raven_Autoloader::register();
-$client = new Raven_Client('https://<PUBLIC_DSN_KEY>:<PRIVATE_DSN_KEY>@sentry.io/<PROJECT_ID>');
-$error_handler = new Raven_ErrorHandler($client);
-$error_handler->registerExceptionHandler();
-$error_handler->registerErrorHandler();
-$error_handler->registerShutdownFunction();
-
 /**
  * CodeIgniter
  *
