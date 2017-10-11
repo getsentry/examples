@@ -1,4 +1,4 @@
-package com.sentry.example.basic;
+package io.sentry.example.basic;
 
 import io.sentry.Sentry;
 import io.sentry.SentryClient;
@@ -22,8 +22,8 @@ public class MyClass {
         Sentry.init();
 
         // You can also manually provide the DSN to the ``init`` method.
-        String dsn = "https://d6edb05ed6194baf895eb3ae7ab1b244:6b96ea34fac44be5893ca5464bf57aa9@sentry.io/228369";
-        Sentry.init(dsn);
+        // String dsn = "https://<SENTRY_PUBLIC_KEY>:<SENTRY_PRIVATE_KEY>@sentry.io/<PROJECT_ID>";
+        // Sentry.init(dsn);
 
         /*
         It is possible to go around the static ``Sentry`` API, which means
