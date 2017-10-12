@@ -54,3 +54,7 @@ report.xml
 
 # Java
 target/
+
+#Python
+.env
+env
