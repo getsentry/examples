@@ -11,3 +11,4 @@ variable:
 
 [maven]: http://maven.apache.org/
 [sentry-java]: https://github.com/getsentry/sentry-java
+[documentation]: https://docs.sentry.io/clients/java/
