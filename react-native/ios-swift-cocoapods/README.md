@@ -6,4 +6,8 @@ npm install
 pod install
 ```
 
-Build project in Xcode.
+Start react-native server:
+
+`yarn start --reset-cache`
+
+Run Xcode App.
