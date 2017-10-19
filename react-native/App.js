@@ -5,17 +5,17 @@
  */
 
 import React, {Component} from 'react';
-
-import {AppRegistry, StyleSheet, Text, View, Button, TextInput} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, TextInput} from 'react-native';
 
 import {Sentry, SentrySeverity, SentryLog} from 'react-native-sentry';
 
-Sentry.config(
-  'https://6890c2f6677340daa4804f8194804ea2:8ce0e61531284b1c8f39318c974ad264@sentry.io/148053',
-  {
-    logLevel: SentryLog.Verbose
-  }
-).install();
+const sentryDsn = Platform.select({
+  android:
+    'https://6890c2f6677340daa4804f8194804ea2:8ce0e61531284b1c8f39318c974ad264@sentry.io/148053',
+  ios:
+    'https://6890c2f6677340daa4804f8194804ea2:8ce0e61531284b1c8f39318c974ad264@sentry.io/148053'
+});
+Sentry.config(sentryDsn).install();
 
 Sentry.setExtraContext({
   a_thing: 3,
@@ -48,7 +48,7 @@ Sentry.captureBreadcrumb({
   }
 });
 
-export default class AwesomeProject extends Component {
+export default class App extends Component<{}> {
   constructor() {
     super();
     this.state = {text: ''};
@@ -151,5 +151,3 @@ const styles = StyleSheet.create({
     marginBottom: 5
   }
 });
-
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);

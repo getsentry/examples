@@ -7,15 +7,17 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"react": "16.0.0-alpha.12",
-		"react-native": "0.46.4",
-		"react-native-sentry": "^0.17.1"
+		"appium-doctor": "^1.4.3",
+		"react": "16.0.0-beta.5",
+		"react-native": "0.49.3",
+		"react-native-sentry": "^0.28.0",
+		"wd": "^1.4.1"
 	},
 	"devDependencies": {
-		"babel-jest": "20.0.3",
-		"babel-preset-react-native": "3.0.1",
-		"jest": "20.0.4",
-		"react-test-renderer": "16.0.0-alpha.12"
+		"babel-jest": "21.2.0",
+		"babel-preset-react-native": "4.0.0",
+		"jest": "21.2.1",
+		"react-test-renderer": "16.0.0-beta.5"
 	},
 	"jest": {
 		"preset": "react-native"

@@ -27,6 +27,11 @@ public class MainApplication extends Application implements ReactApplication {
             new RNSentryPackage(MainApplication.this)
       );
     }
+
+    @Override
+    protected String getJSMainModuleName() {
+      return "index";
+    }
   };
 
   @Override
