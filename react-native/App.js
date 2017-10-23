@@ -15,7 +15,10 @@ const sentryDsn = Platform.select({
   ios:
     'https://6890c2f6677340daa4804f8194804ea2:8ce0e61531284b1c8f39318c974ad264@sentry.io/148053'
 });
-Sentry.config(sentryDsn).install();
+Sentry.config(sentryDsn, {
+  logLevel: SentryLog.Debug,
+  deactivateStacktraceMerging: false
+}).install();
 
 Sentry.setExtraContext({
   a_thing: 3,
@@ -65,6 +68,9 @@ export default class App extends Component<{}> {
   _throwError() {
     throw new Error('Sentry: Test throw error');
   }
+  _rejectPromise() {
+    Promise.reject('Boom promise');
+  }
   _setVersion() {
     Sentry.setVersion('1337');
   }
@@ -80,7 +86,6 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native Sentry example</Text>
         <Button
           style={{fontSize: 20, color: 'green'}}
           styleDisabled={{color: 'red'}}
@@ -112,6 +117,13 @@ export default class App extends Component<{}> {
         <Button
           style={{fontSize: 20, color: 'green'}}
           styleDisabled={{color: 'red'}}
+          onPress={() => this._rejectPromise()}
+          accessibilityLabel={'reject promise'}
+          title="reject promise"
+        />
+        <Button
+          style={{fontSize: 20, color: 'green'}}
+          styleDisabled={{color: 'red'}}
           onPress={() => this._nativeCrash()}
           accessibilityLabel={'native crash'}
           title="native crash!"
@@ -125,7 +137,7 @@ export default class App extends Component<{}> {
         />
         <TextInput
           style={{height: 40, borderColor: 'gray', borderWidth: 1, width: '80%'}}
-          accessibilityLabel={'textarea'}
+          accessibilityLabel={'status'}
           value={this.state.text}
         />
       </View>

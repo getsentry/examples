@@ -7,11 +7,9 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"appium-doctor": "^1.4.3",
 		"react": "16.0.0-beta.5",
 		"react-native": "0.49.3",
-		"react-native-sentry": "^0.28.0",
-		"wd": "^1.4.1"
+		"react-native-sentry": "^0.29.0"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",
