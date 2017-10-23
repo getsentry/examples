@@ -1,6 +1,6 @@
-#Flask Example for [getsentry](https://github.com/getsentry)
+# Flask Example for [getsentry](https://github.com/getsentry)
 
-![Sentry logo](sentry-logo-black.png)
+![Sentry logo](_ReadMeImages/sentry-logo-black.png)
 
 ### Table of Contents
 - [Introduction](#introduction)
