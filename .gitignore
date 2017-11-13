@@ -1,5 +1,5 @@
 # Node
-node_modules
+node_modulesA
 *.log
 
 # Mac OS X
@@ -53,4 +53,6 @@ report.xml
 .env
 
 # Java
+sentry.properties
 target/
+android/app/release/
