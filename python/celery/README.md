@@ -1,64 +1,144 @@
-# Celery
+# Celery Example for [getsentry](https://github.com/getsentry)
 
-https://docs.sentry.io/clients/python/integrations/celery/
+![Sentry logo](../flask/_ReadMeImages/sentry-logo-black.png)
 
-Celery is a popular asynchronous task management framework. It is often integrated with a web application to allow computational work to be done outside the scope of web requests.
+### Table of Contents
 
-Quick vocabulary for Celery:
+- [Introduction](#introduction)
+- [Celery](#celery)
+- [About This Demo](#about-this-demo)
+- [Running The Demo](#running-the-demo)
 
-* A **Task** is a function that can be triggered asynchronously, with or without parameters
-* A **Worker** is the Python process where tasks execute
-* The **Application** is an object that contains the Celery configuration, registers Tasks, and ...
+## Introduction
 
-## This Demo
+[Sentry](https://sentry.io/welcome/) provides open source error tracking that shows you every crash in your stack as it happens, with the details needed to prioritize, identify, reproduce, and fix each issue. It also gives you information your support team can use to reach out to and help those affected and tools that let users send you feedback for peace of mind.
 
-The demo here has two processes, each with a separate entry point.
+Sentry was conceived in 2010 with a simple aim of illuminating production application issues. It started as a tiny bit of Open Source code, and has since expanded to an incredible team and hundreds of contributors, and now support all popular languages and platforms.
 
-* Web app - one sentence summary
-* Worker - one sentence summary
+Read about how Sentry came to be on [StackShare](https://stackshare.io/posts/founder-stories-how-sentry-built-their-open-source-service).
 
-This code uses Celery 3.1 which is not the latest version, assuming that existing applications might not have upgraded yet. The procedure for integrating Raven/Sentry with Celery 4.0+ should be roughly similar.
+## Celery
 
-These two processes are configured to communicate using RabbitMQ running on localhost port 5672.
+[Celery](http://www.celeryproject.org/) is a popular asynchronous task management framework. It is often integrated with a web application to allow computational work to be done outside the usual request-response cycle.
 
-## Setup
+A refresher on Celery vocabulary:
+
+* A **Task** is a Python function that will be triggered asynchronously
+* A **Worker** is the Python process where Tasks execute, regardless of where they are triggered
+* The **Broker** is a network service that stores the Task queue and metadata; in real applications this is usually RabbitMQ or Redis
+* The **Application** is a Python object that contains the Celery configuration, registers Tasks, and communicates with the Broker
+  * Confusingly, the Celery Application must be instantiated in each Python process that triggers or runs Tasks; in this case both the web frontend **and** the Celery Worker
+
+## About This Demo
+
+This demo provides a basic example of [integrating Sentry with the Celery Application](https://docs.sentry.io/clients/python/integrations/celery/). To play with this demo, you'll need to create a Sentry account, and [update the Worker configuration with your DSN](#configuring-sentry).
+
+The code for this demo is divided into two components:
+
+* A minimal Flask-based web app that responds to HTTP requests
+* A Celery Worker loaded with two Tasks: one that always works and one that always errors
+
+Each of these components runs in a separate process. They are configured to communicate using RabbitMQ running on `localhost` on port 5672.
+
+The web app does **not** load the Sentry client library (Raven); the Celery Worker **does** load Raven so it can report errors to Sentry. This is intentional and done as a reminder that each process in your larger app can be configured to report independently to separate Sentry DSNs or not at all.
+
+*Note:* This demo uses Celery 3.1 which is not the latest version, based on the assumption that existing applications might not have upgraded yet. The procedure for integrating Raven/Sentry with Celery 4.0+ should be very similar.
+
+## Running The Demo
+
+For ease of isolating the demonstration code, it is best to use a [Python virtualenv](https://virtualenv.pypa.io/en/stable/) to contain the installed packages. Installing Python, pip, and virtualenv are outside the scope of this demo.
 
 ```
-mkvirtualenv celery_example
+virtualenv celery_example
+. celery_example/bin/activate
 pip install -r ./requirements.txt
 ```
 
-The easiest way to get RabbitMQ installed and running for this demo is probably with Docker:
+The following sections describe running three pieces of software: The Celery Broker (RabbitMQ), the Celery Worker, and the web frontend. For ease of monitoring each of them, it is recommended to start each one in a separate terminal window or tab.
+
+### Configuring Sentry
+
+Raven, the Sentry client library, uses a [DSN generated from Sentry](https://docs.sentry.io/quickstart/#configure-the-dsn) to collect errors and send them to the right place.
+
+Replace the dummy DSN in [async.py](demo/settings/async.py) with a DSN for one of your projects. You can find these under Settings > Client Keys in your account.
+
+### Starting The Broker
+
+The easiest way to get RabbitMQ installed and running for this demo is using Docker. Installing Docker and related services is outside the scope of this demo.
+
+This will obtain the latest RabbitMQ container and run it in the foreground with appropriate settings for the demo:
 
 ```
 docker pull rabbitmq:alpine
-docker run -d -p 5672:5672 --hostname rabbit --name rabbit rabbitmq:alpine
+docker run -p 5672:5672 --hostname rabbit --name rabbit rabbitmq:alpine
 ```
 
-## Celery Worker
+### Starting the Celery Worker
 
-Run: `./worker.sh`
+With the `celery_example` virtualenv activated, run `./worker.sh` from within this directory.
 
-This
+This will launch the Celery Worker process in the foreground. It should successfully register Tasks and, if RabbitMQ is running, communicate with the Broker.
 
-### Tasks
+A successful start will look something like this:
 
-There are two tasks in this project. One is in each "application" (using Django terminology; each is a separate Python package), `app_bar` and `app_foo`.
+```
+ -------------- celery@computername.local v3.1.25 (Cipater)
+---- **** -----
+--- * ***  * -- Darwin-17.2.0-x86_64-i386-64bit
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         settings.async:0x103df86d0
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
 
-* `app_bar.tasks.good_task` will complete successfully and, if logging is configured, send a debug-severity message.
 
-* `app_foo.tasks.bad_task` will always raise an exception, which will (hopefully) be captured by Raven and transmitted to Sentry. If logging is configured, it will also send a debug-severity message.
+[tasks]
+  . app_bar.tasks.good_task
+  . app_foo.tasks.bad_task
 
-## Web Frontend
+[2017-11-21 11:16:01,315: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-11-21 11:16:01,346: INFO/MainProcess] mingle: searching for neighbors
+[2017-11-21 11:16:02,371: INFO/MainProcess] mingle: all alone
+[2017-11-21 11:16:02,388: WARNING/MainProcess] celery@computername.local ready.
+```
 
-Run: `./frontend.py`
+An error like this:
 
-This is a very basic Flask web application. It does NOT configure Raven and does not report to Sentry, partially as a reminder that each process in your larger app can be configured to report independently to separate Sentry DSNs or not at all.
+```
+[2017-11-21 11:15:55,492: WARNING/MainProcess] Sentry responded with an error: HTTP Error 403: OK (url: https://sentry.io/api/<project>/store/)
+```
+
+means the Sentry DSN is misconfigured. Make sure to copy a good DSN from Sentry and put it in the demo's configuration as described in "Configuring Sentry"
+
+
+An error like this:
+
+```
+[2017-11-21 11:15:55,492: ERROR/MainProcess] [u'consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: Socket closed.\nTrying again in 2.00 seconds...\n']
+```
+
+means the Celery Broker (RabbitMQ) is not running as expected. Try re-running the Docker commands under "Starting The Broker"
+
+### Starting The Web Frontend
+
+With the `celery_example` virtualenv activated, run `./web.sh` from within this directory.
 
 Surfing to http://127.0.0.1:5000/ when the frontend is running will attempt to trigger two Celery tasks: the good task and the bad task.
 
-If triggering those tasks causes any exceptions, they will be displayed in the browser (because DEBUG is enabled in Flask).  If they succeed, you will see "Hello World."
+If triggering those tasks causes any exceptions, they will be displayed in the browser (because DEBUG is enabled in Flask). If they succeed, you will see "Hello World." in your browser.
 
-## Footnote
+## Contributing
 
-Naming is intentionally different at each stage (e.g. `worker` for the command, `backend` for the code, `async` for the settings) to be contrary to the many examples that ambigiously use "celery" and "app".
+Looking to get started contributing to Sentry? Our [internal documentation](https://docs.sentry.io/internal/) has you covered.
+
+## Anything Else?
+
+[Tweet](https://twitter.com/getsentry), [email](hello@sentry.io), or visit our [forum](https://forum.sentry.io)!
+
+## A Footnote On Names
+
+Naming is intentionally different at each stage (e.g. `worker` for the command, `backend` in the code, `async` for the settings file) to be contrary to the many examples that ambiguously use "celery" and "app" -- which can sometimes complicate import ordering.
