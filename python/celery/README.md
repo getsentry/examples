@@ -28,8 +28,6 @@ A refresher on Celery vocabulary:
 * The **Broker** is a network service that stores the Task queue and metadata; in real applications this is usually RabbitMQ or Redis
 * The **Application** is a Python object that contains the Celery configuration, registers Tasks, and communicates with the Broker
 
-(Confusingly, the Celery Application must be instantiated in each Python process that triggers or runs Tasks; in the case of this demo both the web frontend **and** the Celery Worker.)
-
 ## About This Demo
 
 This demo provides a basic example of [integrating Sentry with the Celery Application](https://docs.sentry.io/clients/python/integrations/celery/). To play with this demo, you'll need to create a Sentry account, and [update the Worker configuration with your DSN](#configuring-sentry).
@@ -65,13 +63,13 @@ Replace the dummy DSN in [async.py](demo/settings/async.py) with a DSN for one o
 
 ### Starting The Broker
 
-The easiest way to get RabbitMQ installed and running for this demo is using Docker. Installing Docker and related services is outside the scope of this demo.
+The easiest way to get RabbitMQ installed and running for this demo is using Docker. Installing Docker and related software is outside the scope of this demo.
 
 This will obtain the latest RabbitMQ container and run it in the foreground with appropriate settings for the demo:
 
 ```
 docker pull rabbitmq:alpine
-docker run -p 5672:5672 --hostname rabbit --name rabbit rabbitmq:alpine
+docker run -p 5672:5672 --hostname rabbitdemo --name rabbitdemo rabbitmq:alpine
 ```
 
 ### Starting the Celery Worker
@@ -142,7 +140,7 @@ Raven should capture the exception from running the "bad" Task and transmit it t
 
 Pressing Ctrl-C once in each terminal window should stop the Broker, the web frontend, and the Celery Worker.
 
-`docker rm rabbit` will delete the Docker container that was launched for the Broker. The disk images that were downloaded can be listed with `docker images` and manually removed with `docker rmi IMAGE_ID`.
+`docker rm rabbitdemo` will delete the Docker container that was launched for the Broker. The disk images that were downloaded can be listed with `docker images` and manually removed with `docker rmi IMAGE_ID`.
 
 `rm -r celery_example` will delete the virtualenv directory containing all the installed Python packages.
 
