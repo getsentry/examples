@@ -9,7 +9,7 @@ CELERY_CONFIG = {
 }
 
 RAVEN_CONFIG = {
-   'DSN': 'https://<key>:<secret>@sentry.io/<project>',
+   'DSN': 'https://<PUBLIC_DSN_KEY>:<PRIVATE_DSN_KEY>@sentry.io/<PROJECT_ID>',
 }
 
 

@@ -11,11 +11,7 @@
 
 ## Introduction
 
-[Sentry](https://sentry.io/welcome/) provides open source error tracking that shows you every crash in your stack as it happens, with the details needed to prioritize, identify, reproduce, and fix each issue. It also gives you information your support team can use to reach out to and help those affected and tools that let users send you feedback for peace of mind.
-
-Sentry was conceived in 2010 with a simple aim of illuminating production application issues. It started as a tiny bit of Open Source code, and has since expanded to an incredible team and hundreds of contributors, and now support all popular languages and platforms.
-
-Read about how Sentry came to be on [StackShare](https://stackshare.io/posts/founder-stories-how-sentry-built-their-open-source-service).
+[Sentry](https://sentry.io/welcome/) is an open source tool that provides error tracking to show you every crash in your application as it happens, with the details needed to prioritize, identify, reproduce, and fix each issue.
 
 ## About Celery
 
@@ -30,18 +26,18 @@ A refresher on Celery vocabulary:
 
 ## About This Demo
 
-This demo provides a basic example of [integrating Sentry with the Celery Application](https://docs.sentry.io/clients/python/integrations/celery/). To play with this demo, you'll need to create a Sentry account, and [update the Worker configuration with your DSN](#configuring-sentry).
+This demo provides a basic example of instrumenting [Celery Tasks with Sentry](https://docs.sentry.io/clients/python/integrations/celery/). To play with this demo, you'll need to create a Sentry account, and [update the Worker configuration](#configuring-sentry) with your DSN.
 
-The code for this demo is divided into two components:
+The code for this demo is divided into two components, each of which runs in a separate process:
 
 * A minimal Flask-based web app that responds to HTTP requests
 * A Celery Worker loaded with two Tasks: one that always works and one that always errors
 
-Each of these components runs in a separate process. They are configured to communicate using RabbitMQ running on `localhost` on port 5672.
+In addition to these processes, RabbitMQ must be running on `localhost` using port 5672.
 
-The web app does **not** load the Sentry client library (Raven); the Celery Worker **does** load Raven so it can report errors to Sentry. This is intentional and done as a reminder that each process in your larger app can be configured to report independently to separate Sentry DSNs or not at all.
+The web app does **not** load the Sentry client library (Raven); the Celery Worker does so it can report errors to Sentry. This is intentional and done as a reminder that each process in a larger app can be configured to report independently to separate Sentry DSNs or not at all.
 
-*Note:* This demo uses Celery 3.1 which is not the latest version, based on the assumption that existing applications might not have upgraded yet. The procedure for integrating Raven/Sentry with Celery 4.0+ should be very similar.
+> Note: This demo uses Celery 3.1 which is not the latest version, based on the assumption that existing applications might not have upgraded yet. The procedure for integrating Raven/Sentry with Celery 4.0+ should be very similar.
 
 ## Running The Demo
 
@@ -59,7 +55,13 @@ The following sections describe running three pieces of software: The Celery Bro
 
 Raven, the Sentry client library, uses a [DSN generated from Sentry](https://docs.sentry.io/quickstart/#configure-the-dsn) to collect errors and send them to the right place.
 
-Replace the dummy DSN in [async.py](demo/settings/async.py) with a DSN for one of your projects. You can find these under Settings > Client Keys in your account.
+Replace the invalid DSN in [async.py](demo/settings/async.py) with a DSN for one of your projects. You can find these under Project Settings > Client Keys (DSN) on the Sentry dashboard.
+
+```
+RAVEN_CONFIG = {
+   'DSN': 'https://<PUBLIC_DSN_KEY>:<PRIVATE_DSN_KEY>@sentry.io/<PROJECT_ID>',
+}
+```
 
 ### Starting The Broker
 
@@ -146,7 +148,7 @@ Pressing Ctrl-C once in each terminal window should stop the Broker, the web fro
 
 ## Contributing
 
-Looking to get started contributing to Sentry? Our [internal documentation](https://docs.sentry.io/internal/) has you covered.
+Sentry is open source! Want to get started contributing to Sentry? Our [internal documentation](https://docs.sentry.io/internal/) has you covered.
 
 ## Anything Else?
 
