@@ -5,7 +5,7 @@
 ### Table of Contents
 
 - [Introduction](#introduction)
-- [Celery](#celery)
+- [About Celery](#about-celery)
 - [About This Demo](#about-this-demo)
 - [Running The Demo](#running-the-demo)
 
@@ -17,7 +17,7 @@ Sentry was conceived in 2010 with a simple aim of illuminating production applic
 
 Read about how Sentry came to be on [StackShare](https://stackshare.io/posts/founder-stories-how-sentry-built-their-open-source-service).
 
-## Celery
+## About Celery
 
 [Celery](http://www.celeryproject.org/) is a popular asynchronous task management framework. It is often integrated with a web application to allow computational work to be done outside the usual request-response cycle.
 
@@ -27,7 +27,8 @@ A refresher on Celery vocabulary:
 * A **Worker** is the Python process where Tasks execute, regardless of where they are triggered
 * The **Broker** is a network service that stores the Task queue and metadata; in real applications this is usually RabbitMQ or Redis
 * The **Application** is a Python object that contains the Celery configuration, registers Tasks, and communicates with the Broker
-  * Confusingly, the Celery Application must be instantiated in each Python process that triggers or runs Tasks; in this case both the web frontend **and** the Celery Worker
+
+(Confusingly, the Celery Application must be instantiated in each Python process that triggers or runs Tasks; in the case of this demo both the web frontend **and** the Celery Worker.)
 
 ## About This Demo
 
@@ -106,22 +107,20 @@ A successful start will look something like this:
 [2017-11-21 11:16:02,388: WARNING/MainProcess] celery@computername.local ready.
 ```
 
-An error like this:
+#### Problems Starting The Worker
 
 ```
 [2017-11-21 11:15:55,492: WARNING/MainProcess] Sentry responded with an error: HTTP Error 403: OK (url: https://sentry.io/api/<project>/store/)
 ```
 
-means the Sentry DSN is misconfigured. Make sure to copy a good DSN from Sentry and put it in the demo's configuration as described in "Configuring Sentry"
+An error like the above probably means the Sentry DSN is misconfigured. Make sure to copy a good DSN from Sentry and put it in the demo's configuration as described in [Configuring Sentry](#configuring-sentry)
 
-
-An error like this:
 
 ```
 [2017-11-21 11:15:55,492: ERROR/MainProcess] [u'consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: Socket closed.\nTrying again in 2.00 seconds...\n']
 ```
 
-means the Celery Broker (RabbitMQ) is not running as expected. Try re-running the Docker commands under "Starting The Broker"
+An error like the above means the Celery Broker (RabbitMQ) is not running as expected. Try re-running the Docker commands under [Starting The Broker](#starting-the-broker) in another terminal window -- and leave it running!
 
 ### Starting The Web Frontend
 
@@ -130,6 +129,14 @@ With the `celery_example` virtualenv activated, run `./web.sh` from within this 
 Surfing to http://127.0.0.1:5000/ when the frontend is running will attempt to trigger two Celery tasks: the good task and the bad task.
 
 If triggering those tasks causes any exceptions, they will be displayed in the browser (because DEBUG is enabled in Flask). If they succeed, you will see "Hello World." in your browser.
+
+## Cleaning Up
+
+Pressing Ctrl-C once in each terminal window should stop the Broker, the web frontend, and the Celery Worker.
+
+`docker rm rabbit` will delete the Docker container that was launched for the Broker. The disk images that were downloaded can be listed with `docker images` and manually removed with `docker rmi IMAGE_ID`.
+
+`rm -r celery_example` will delete the virtualenv directory containing all the installed Python packages.
 
 ## Contributing
 
