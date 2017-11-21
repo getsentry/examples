@@ -120,7 +120,7 @@ An error like the above probably means the Sentry DSN is misconfigured. Make sur
 [2017-11-21 11:15:55,492: ERROR/MainProcess] [u'consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: Socket closed.\nTrying again in 2.00 seconds...\n']
 ```
 
-An error like the above means the Celery Broker (RabbitMQ) is not running as expected. Try re-running the Docker commands under [Starting The Broker](#starting-the-broker) in another terminal window -- and leave it running!
+An error like the above means the Celery Broker (RabbitMQ) is not running as expected. Try re-running the Docker commands under [Starting The Broker](#starting-the-broker) in another terminal window and leave it running!
 
 ### Starting The Web Frontend
 
@@ -156,4 +156,4 @@ Looking to get started contributing to Sentry? Our [internal documentation](http
 
 ## A Footnote On Names
 
-Naming is intentionally different at each stage (e.g. `worker` for the command, `backend` in the code, `async` for the settings file) to be contrary to the many examples that ambiguously use "celery" and "app" -- which can sometimes complicate import ordering.
+Naming is intentionally different at each stage (e.g. `worker` for the command, `backend` in the code, `async` for the settings file) to be contrary to the many examples that ambiguously use "celery" and "app", which can sometimes complicate import ordering.
