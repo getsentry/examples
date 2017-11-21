@@ -1,6 +1,6 @@
 # Celery Example for [getsentry](https://github.com/getsentry)
 
-![Sentry logo](../flask/_ReadMeImages/sentry-logo-black.png)
+![Sentry logo](_ReadMeImages/sentry-logo-black.png)
 
 ### Table of Contents
 
@@ -126,9 +126,17 @@ An error like the above means the Celery Broker (RabbitMQ) is not running as exp
 
 With the `celery_example` virtualenv activated, run `./web.sh` from within this directory.
 
-Surfing to http://127.0.0.1:5000/ when the frontend is running will attempt to trigger two Celery tasks: the good task and the bad task.
+### Trying It Out
 
-If triggering those tasks causes any exceptions, they will be displayed in the browser (because DEBUG is enabled in Flask). If they succeed, you will see "Hello World." in your browser.
+Surfing to http://127.0.0.1:5000/ while the web frontend is running will attempt to trigger two Celery tasks: the good task and the bad task.
+
+If *triggering* the tasks causes any exceptions, the reason will be displayed in the browser (because `DEBUG` is enabled in Flask). If they succeed, you will see "Hello World." in your browser.
+
+If all three processes are running, there should be no errors triggering the tasks. Even though the "bad" Task always breaks, this error *does not affect the web frontend*.
+
+Raven should capture the exception from running the "bad" Task and transmit it to Sentry. Check your Sentry dashboard for the event, which should look something like this:
+
+![Dashboard Example](_ReadMeImages/dashboard-example.png)
 
 ## Cleaning Up
 
