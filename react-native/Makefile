@@ -8,6 +8,5 @@ clean-project: #this is meant to be called from make react-native appium make fi
 	cp sentry.properties AwesomeProject/ios/.
 	cp sentry.properties AwesomeProject/android/.
 	cp App.js AwesomeProject/.
-	cp AppDelegate.m AwesomeProject/ios/AwesomeProject/.
 	(cd AwesomeProject; SENTRY_WIZARD_SKIP_CONNECT=true react-native link react-native-sentry)
 	rm AwesomeProject/android/app/build.gradle && cp build.gradle AwesomeProject/android/app/.
