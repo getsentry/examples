@@ -5,8 +5,8 @@ clean-project: #this is meant to be called from make react-native appium make fi
 	react-native init AwesomeProject --version react-native@0.49.3
 	cd ../../; yarn link; yarn install
 	(cd AwesomeProject; yarn link react-native-sentry)
+	(cd AwesomeProject; SENTRY_WIZARD_SKIP_CONNECT=true react-native link react-native-sentry)
 	cp sentry.properties AwesomeProject/ios/.
 	cp sentry.properties AwesomeProject/android/.
 	cp App.js AwesomeProject/.
-	(cd AwesomeProject; SENTRY_WIZARD_SKIP_CONNECT=true react-native link react-native-sentry)
 	rm AwesomeProject/android/app/build.gradle && cp build.gradle AwesomeProject/android/app/.
