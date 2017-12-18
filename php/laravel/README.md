@@ -1,4 +1,4 @@
-# Sentry Android Example
+# Sentry PHP Laravel Example
 
 This shows how to use Sentry in Laravel to capture errors/exceptions
 
@@ -11,3 +11,4 @@ This shows how to use Sentry in Laravel to capture errors/exceptions
 # Resources:
 - https://sentry.io/for/laravel/
 - https://docs.sentry.io/clients/php/
+- Sentry config is in `app/Exceptions/Handler.php`
