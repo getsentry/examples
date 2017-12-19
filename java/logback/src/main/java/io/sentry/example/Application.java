@@ -2,6 +2,7 @@ package io.sentry.example;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 
 public class Application
 {
@@ -9,6 +10,8 @@ public class Application
 
     public static void main(String[] args)
     {
+        MDC.put("customKey", "customValue");
+
         logger.debug("Debug message");
         logger.info("Info message");
         logger.warn("Warn message");
