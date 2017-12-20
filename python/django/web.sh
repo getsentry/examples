@@ -9,6 +9,4 @@ if [ "${?}" -ne "0" ]; then
   exit 1
 fi
 
-pushd demo
-python manage.py runserver
-popd
+python demo/manage.py runserver

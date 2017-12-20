@@ -5,6 +5,7 @@ if [ -f .setup_already_run ]; then
   exit 1
 fi
 
+# create empty virtual environment
 virtualenv django_example
 
 if [ "${?}" -ne "0" ]; then
@@ -12,6 +13,7 @@ if [ "${?}" -ne "0" ]; then
   exit 1
 fi
 
+# activate the new virtual environment
 . django_example/bin/activate
 
 if [ "${?}" -ne "0" ]; then
@@ -19,22 +21,13 @@ if [ "${?}" -ne "0" ]; then
   exit 1
 fi
 
+# install python packages
 pip install -r ./requirements.txt
 
 if [ "${?}" -ne "0" ]; then
   echo "Error installing Python requirements: quitting setup"
   exit 1
 fi
-
-pushd demo
-python manage.py collectstatic
-
-if [ "${?}" -ne "0" ]; then
-  popd
-  echo "Error running Django static files collector: quitting setup"
-  exit 1
-fi
-popd
 
 touch .setup_already_run
 echo "Setup completed successfully"

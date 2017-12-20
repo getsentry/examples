@@ -23,15 +23,17 @@ It includes an object-relational mapper, a templating engine, dynamically-genera
 
 This demo provides a basic example of instrumenting [a Django project with Sentry](https://docs.sentry.io/clients/python/integrations/django/). To play with this demo, you'll need to create a Sentry account, and [update the project configuration](#configuring-sentry) with your DSN.
 
-The code for this demo is split up in a similar manner to the Django tutorial: a single "project", `myproject`, and a single "app", `myapp`.  `myproject` contains the settings and global URL routing, and `myapp` contains views, templates, and static files.
+The code for this demo is split up in a similar manner to the Django tutorial and most of the code was generated from `django-admin startproject` and `python manage.py startapp`. It includes a single "project", `myproject`, and a single "app", `myapp`. `myproject` contains the settings and global URL routing, and `myapp` contains views, templates, and static files.
 
 Some Django projects only contain a single app and some contain several (or many). Configuring a Django application to use Raven is similar for either approach:
 
 1. Install the Raven library.
-2. Add Raven to Django's `INSTALLED_APPS` setting.
-3. Create a `RAVEN_CONFIG` dict in Django settings with the project's DSN and other optional parameters.
+2. Add Raven to the Django project's `INSTALLED_APPS` setting.
+3. Create a `RAVEN_CONFIG` dict in the project's settings with your DSN and other optional parameters.
 
-These steps are much abridged from the [official documentation](https://docs.sentry.io/clients/python/integrations/django/), which is a much better reference.
+These steps are abridged from the [official documentation](https://docs.sentry.io/clients/python/integrations/django/), which is a much better reference.
+
+To keep the demo light, many key Django features were commented out of the generated code. In particular, no ORM models are defined so there is no need to create or apply migrations. (A sqlite database file may get generated but it's safe to delete.)
 
 > Note: This demo uses Django 1.11 which is a "long-term support" (LTS) release but not the latest version. This was selected on the assumption that existing applications might not have upgraded yet. The procedure for integrating Raven/Sentry with Django 2.0+ should be very similar.
 
@@ -39,13 +41,13 @@ These steps are much abridged from the [official documentation](https://docs.sen
 
 For ease of isolating the demonstration code, it is best to use a [Python virtualenv](https://virtualenv.pypa.io/en/stable/) to contain the installed packages. Installing Python, pip, and virtualenv are outside the scope of this demo.
 
-```
-virtualenv django_example
-. django_example/bin/activate
-pip install -r ./requirements.txt
-```
+A setup script in this directory (`./setup.sh`) will do the following, or you can run the individual commands:
 
-The following sections describe running the web application locally.
+```
+virtualenv django_example              # create a new virtual environment
+. django_example/bin/activate          # and use it
+pip install -r ./requirements.txt      # install python packages
+```
 
 ### Configuring Sentry
 
@@ -59,15 +61,13 @@ MY_SENTRY_DSN = 'https://<PUBLIC_DSN_KEY>:<PRIVATE_DSN_KEY>@sentry.io/<PROJECT_I
 
 ### Starting The Web Frontend
 
-Run `./web.sh` from within this directory.
+Run `./web.sh` from within this directory. This will start Django's development server (`runserver`) on the local machine.
 
 ### Trying It Out
 
-Surfing to http://127.0.0.1:8000/ while the web project is running will load a generic menu with two links. The first link is to a page that "works" and the second one is to a page that will always generate an error.
+Surfing to http://127.0.0.1:8000/ while the Django `runserver` process is active will load a generic menu with two links. The first link is to a page that works and the second one is to a page that will always generate an error.
 
-Depending on whether the `DEBUG` Django setting is `True` or `False`, surfing to the "bad" page will either generate a detailed stack trace or a generic 500 page.
-
-Either way, Raven should capture the exception from attempting to load the "bad" page and transmit it to Sentry. Check your Sentry dashboard for the event, which should look something like this:
+Depending on whether the `DEBUG` Django setting is `True` or `False`, surfing to the broken page will either generate a detailed stack trace or a generic 500 page. Either way, Raven should capture the exception from attempting to load the broken page and transmit it to Sentry. Check your Sentry dashboard for the event, which should look something like this:
 
 ![Dashboard Example](_ReadMeImages/dashboard-example.png)
 
