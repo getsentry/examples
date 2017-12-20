@@ -1,0 +1,4 @@
+.setup_already_run
+django_example/
+demo/myproject/db.sqlite3
+demo/myproject/static/

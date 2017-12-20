@@ -1,0 +1,1 @@
+MY_SENTRY_DSN = 'https://<PUBLIC_DSN_KEY>:<PRIVATE_DSN_KEY>@sentry.io/<PROJECT_ID>'
