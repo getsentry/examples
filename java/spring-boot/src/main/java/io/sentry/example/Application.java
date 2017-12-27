@@ -10,10 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
+
 @Controller
 @EnableAutoConfiguration
 @SpringBootApplication
 public class Application {
+
+    private static final Logger logger = LoggerFactory.getLogger("example.Application");
+
     /*
     Register a HandlerExceptionResolver that sends all exceptions to Sentry
     and then defers all handling to the other HandlerExceptionResolvers.
@@ -41,9 +48,21 @@ public class Application {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        int x = 1 / 0;
+        MDC.put("customKey", "customValue");
 
-        return "Hello World!";
+        logger.debug("Debug message");
+        logger.info("Info message");
+        logger.warn("Warn message");
+
+        try {
+            int example = 1 / 0;
+        } catch (Exception e) {
+            logger.error("Caught exception!", e);
+        }
+
+        int x = 1 / 0; // uncaught exception!
+
+        return "Hello World";
     }
 
     public static void main(String[] args) {
