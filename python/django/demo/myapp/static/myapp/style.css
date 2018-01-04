@@ -1,0 +1,10 @@
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+  color: #000000;
+}
+
+html, body, p, div {
+  font-family: 'Lora', serif;
+  color: #101010;
+}

@@ -1,5 +1,5 @@
 # Node
-node_modules
+node_modulesA
 *.log
 
 # Mac OS X
@@ -53,8 +53,12 @@ report.xml
 .env
 
 # Java
+sentry.properties
 target/
 
 #Python
 .env
 env
+
+# Android SDK
+android/app/release/
