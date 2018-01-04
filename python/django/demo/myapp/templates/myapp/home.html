@@ -1,0 +1,10 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<h2>Home Page</h2>
+
+<ul>
+    <li><a href="{% url 'good' %}">Working Page</a></li>
+    <li><a href="{% url 'bad' %}">Broken Page</a></li>
+</ul>
+{% endblock %}

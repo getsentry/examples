@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<h2>{{ good_or_bad }} Page</h2>
+
+<p>
+    {{ body_text }}
+</p>
+
+<p><a href="{% url 'index' %}">Back Home</a></p>
+{% endblock %}

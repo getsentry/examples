@@ -1,0 +1,31 @@
+{% load static %}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Sentry Django Hello World</title>
+  <meta name="description" content="Sentry Django Hello World">
+  <meta name="author" content="Sentry.io">
+
+  <link rel="icon" type="image/png" href="{% static 'myapp/favicon.ico' %}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Lora|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'myapp/style.css' %}?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<h1>Hello, World!</h1>
+
+  {% block content %}
+  {% endblock %}
+
+</body>
+</html>
