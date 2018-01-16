@@ -55,4 +55,10 @@ report.xml
 # Java
 sentry.properties
 target/
+
+#Python
+.env
+env
+
+# Android SDK
 android/app/release/
