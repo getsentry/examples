@@ -4,7 +4,7 @@ This project contains an integration example written in Scala and uses Sentry's 
 
 
 ## Installation and Configuration
-Add the Sentry Logback package as dependency to the [build.sbt](https://github.com/getsentry/examples/blob/scala-logback/scala/logback/build.sbt#L8) file.
+Add the Sentry Logback package as dependency to the [build.sbt](https://github.com/getsentry/examples/blob/master/scala/logback/build.sbt#L8) file.
 
 View full documentation of Sentry's Logback integration [here](https://docs.sentry.io/clients/java/modules/logback/#installation). 
 
