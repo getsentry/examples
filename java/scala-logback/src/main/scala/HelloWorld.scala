@@ -2,7 +2,6 @@ import io.sentry.Sentry
 
 object Application {
   def main(args: Array[String]): Unit = {
-    Sentry.init(args(0))
 
     try
       1/0 //caught exception that will be sent to Sentry
