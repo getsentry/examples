@@ -1,7 +1,5 @@
 # Django Example for [getsentry](https://github.com/getsentry)
 
-![Sentry logo](_ReadMeImages/sentry-logo-black.png)
-
 ### Table of Contents
 
 - [Introduction](#introduction)
@@ -81,10 +79,3 @@ Pressing Ctrl-C once in each terminal window should stop Django's development se
 
 Sentry is open source! Want to get started contributing to Sentry? Our [internal documentation](https://docs.sentry.io/internal/) has you covered.
 
-## Anything Else?
-
-[Tweet](https://twitter.com/getsentry), [email](hello@sentry.io), or visit our [forum](https://forum.sentry.io)!
-
-## A Footnote On Names
-
-Naming is intentionally different at each stage (e.g. `worker` for the command, `backend` in the code, `async` for the settings file) to be contrary to the many examples that ambiguously use "celery" and "app", which can sometimes complicate import ordering.
