@@ -8,8 +8,8 @@ clean-project: #this is meant to be called from make react-native appium make fi
 	(cd AwesomeProject; yarn add https://github.com/getsentry/react-native-sentry)
 	rm -rf AwesomeProject/node_modules
 	# https://github.com/facebook/react-native/issues/18962
-	npm uninstall babel-preset-react-native
-	npm install --save-dev babel-preset-react-native@4.0.0
+	cd AwesomeProject; npm uninstall babel-preset-react-native
+	cd AwesomeProject; npm install babel-preset-react-native@4.0.0
 	# -----------------------------------------------------
 	cd AwesomeProject; npm install
 	(cd AwesomeProject; SENTRY_WIZARD_SKIP_CONNECT=true SENTRY_WIZARD_QUIET=true react-native link react-native-sentry)
