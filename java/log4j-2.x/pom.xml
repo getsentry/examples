@@ -12,7 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sentry.version>1.6.1</sentry.version>
+    <sentry.version>1.7.5</sentry.version>
     <slf4j.version>1.7.22</slf4j.version>
   </properties>
 
