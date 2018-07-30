@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Sentry.AspNetCore" Version="0.0.1-preview4" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.2-dev-00026" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00777" />
+  </ItemGroup>
+
+</Project>
