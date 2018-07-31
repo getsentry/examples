@@ -56,6 +56,8 @@
     </Reference>
     <Reference Include="Sentry.EntityFramework, Version=0.0.1.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
       <HintPath>packages\Sentry.EntityFramework.0.0.1-preview2\lib\net462\Sentry.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sentry.PlatformAbstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Sentry.PlatformAbstractions.1.0.0-preview2\lib\net45\Sentry.PlatformAbstractions.dll</HintPath>
