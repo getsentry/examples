@@ -11,7 +11,6 @@ namespace AspNetMvc5Ef6.Controllers
             return View();
         }
 
-        
         // Example: An exception that goes unhandled by the app will be captured by Sentry:
         [HttpPost]
         public ActionResult PostIndex(string @params)
@@ -30,8 +29,8 @@ namespace AspNetMvc5Ef6.Controllers
                 var ioe = new InvalidOperationException("Bad POST! See Inner exception for details.", e);
 
                 ioe.Data.Add("inventory",
-                    // The following anonymous object gets serialized:
-                    new
+                    // The following object gets serialized:
+                    new Extra
                     {
                         SmallPotion = 3,
                         BigPotion = 0,
@@ -42,7 +41,6 @@ namespace AspNetMvc5Ef6.Controllers
             }
         }
 
-        
         // Example: An entity validation exception that goes unhandled by the app will be captured by Sentry:
         [HttpPost]
         public ActionResult ThrowEntityFramework()
@@ -72,6 +70,14 @@ namespace AspNetMvc5Ef6.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [Serializable]
+        public class Extra
+        {
+            public int SmallPotion { get; set; }
+            public int BigPotion { get; set; }
+            public int CheeseWheels { get; set; }
         }
     }
 }

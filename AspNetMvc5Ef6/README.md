@@ -18,4 +18,4 @@ All necessary code for the integration is inside `Global.asax.cs`
 
 
 Example event created by this sample:
-![Example event in Sentry](Sentry EF6 sample event.png)
+![Example event in Sentry](Sentry%20EF6%20sample%20event.png)
