@@ -11,7 +11,11 @@ Check [Program.cs](Program.cs) to see some customization done via the `WebHostBu
 * Capturing an exception manually via an injected `IHub`. (See `HomeController.cs` `Contact` action.)
 * Captures an unhandled exception coming from a view (See `About.cshtml` which throws an exception that goes through the `SpecialExceptionProcessor.cs`)
 * Including the request payload with the event (done via appsettings.json `IncludeRequestPayload`)
+* Enable SDK Debugging via `appsettings.json`. The SDK internal logs are output via Serilog (see screenshot below). In this sample is Console.
 
+Example output of Sentry SDK through Serilog logging:
+
+![SDK log via Serilog](log-output.png))
 
 Example event:
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
@@ -25,7 +26,6 @@ namespace AspNetCore21Serilog
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
 
-
                 // Example integration with advanced configuration scenarios:
                 .UseSentry(options =>
                 {
@@ -33,33 +33,25 @@ namespace AspNetCore21Serilog
                     // That includes 'appsettings.json', environment variables and anything else
                     // defined on the ConfigurationBuilder.
                     // See: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration
-                    options.Init(i =>
-                    {
-                        // Tracks the release which sent the event and enables more features: https://docs.sentry.io/learn/releases/
-                        // If not explicitly set here, the SDK attempts to read it from: AssemblyInformationalVersionAttribute and AssemblyVersion
-                        // TeamCity: %build.vcs.number%, VSTS: BUILD_SOURCEVERSION, Travis-CI: TRAVIS_COMMIT, AppVeyor: APPVEYOR_REPO_COMMIT, CircleCI: CIRCLE_SHA1
-                        i.Release = "e386dfd"; // Could be also the be like: 2.0 or however your version your app
 
-                        i.MaxBreadcrumbs = 200;
+                    // Tracks the release which sent the event and enables more features: https://docs.sentry.io/learn/releases/
+                    // If not explicitly set here, the SDK attempts to read it from: AssemblyInformationalVersionAttribute and AssemblyVersion
+                    // TeamCity: %build.vcs.number%, VSTS: BUILD_SOURCEVERSION, Travis-CI: TRAVIS_COMMIT, AppVeyor: APPVEYOR_REPO_COMMIT, CircleCI: CIRCLE_SHA1
+                    options.Release = "e386dfd"; // Could be also the be like: 2.0 or however your version your app
 
-                        i.Http(h =>
-                        {
-                            //h.Proxy = new WebProxy("https://localhost:3128");
-                        });
+                    options.MaxBreadcrumbs = 200;
 
-                        i.Worker(w =>
-                        {
-                            w.MaxQueueItems = 100;
-                            w.ShutdownTimeout = TimeSpan.FromSeconds(5);
-                        });
-                    });
+                    // Optionally, set an HTTP proxy (it's the same for HTTP and HTTPS connections)
+                    options.HttpProxy = null; // new WebProxy("https://localhost:3128");
 
-                    // Hard-coding here will override any value set on appsettings.json:
-                    options.Logging.MinimumEventLevel = LogLevel.Error;
+                    options.MaxQueueItems = 100;
+                    options.ShutdownTimeout = TimeSpan.FromSeconds(5);
+
+                    // NOTE: Hard-coding here will override any value set on appsettings.json:
+                    options.MinimumEventLevel = LogLevel.Error;
                 })
 
                 .UseSerilog()
-
 
                 .UseStartup<Startup>();
     }
