@@ -1,4 +1,4 @@
-To run this sample, edit [appsettings.json](appsettings.json) and set your DSN to see the events in Sentry.
+To run this sample, set your DSN in [appsettings.json](appsettings.json) and run `dotnet run`.
 
 Check [Program.cs](Program.cs) to see some customization done via the `WebHostBuilder`.
 
