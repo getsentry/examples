@@ -2,7 +2,7 @@
 Running the Demo
 1. Configure your DSN in [appsettings.json](appsettings.json)
 2. Configure your org slug and project slug in [deploy.ps1](deploy.ps1)
-3. Run `./deploy.ps1`
+3. Run `./deploy.ps1` from PowerShell.
 
 Check [Program.cs](Program.cs) to see some Sentry customization done via the `WebHostBuilder`.
 
