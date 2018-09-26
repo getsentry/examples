@@ -4,6 +4,8 @@ Running the Demo
 2. Configure your org slug and project slug in [deploy.ps1](deploy.ps1)
 3. Run `./deploy.ps1` from PowerShell.
 
+![Alt Text](configure-launch-demo.gif)
+
 Check [Program.cs](Program.cs) to see some Sentry customization done via the `WebHostBuilder`.
 
 ### In this sample we demonstrate the following:
