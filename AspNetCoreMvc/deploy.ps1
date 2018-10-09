@@ -9,7 +9,7 @@ sentry-cli releases -o $sentry_org new -p $sentry_project $version
 sentry-cli releases -o $sentry_org -p $sentry_project set-commits --auto $version
 
 #Set new value for release version environment variable
-$Env:RELEASE_VERSION=$version
+$Env:SENTRY_RELEASE=$version
 
 #Launch app 
 dotnet run
