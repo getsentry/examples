@@ -1,3 +1,5 @@
+=======
+To run this sample, edit [appsettings.json](appsettings.json) and **set your DSN** to see the events in Sentry.
 
 Running the Demo
 1. Configure your DSN in [appsettings.json](appsettings.json)

@@ -15,42 +15,32 @@ namespace Sentry.Samples.AspNetCore.Mvc
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseShutdownTimeout(TimeSpan.FromSeconds(10))
                 .UseStartup<Startup>()
 
                 // Example integration with advanced configuration scenarios:
-                .UseSentry(options =>
+                .UseSentry(o =>
                 {
-                    // The parameter 'options' here has values populated through the configuration system.
-                    // That includes 'appsettings.json', environment variables and anything else
-                    // defined on the ConfigurationBuilder.
+                    // The parameter 'o' here has values populated through the configuration system.
+                    // That includes 'appsettings.json', environment variables and anything else defined on the ConfigurationBuilder.
                     // See: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration
-                    options.Init(i =>
-                    {
-                        // Tracks the release which sent the event and enables more features: https://docs.sentry.io/learn/releases/
-                        // If not explicitly set here, the SDK attempts to read it from: AssemblyInformationalVersionAttribute and AssemblyVersion
-                        // TeamCity: %build.vcs.number%, VSTS: BUILD_SOURCEVERSION, Travis-CI: TRAVIS_COMMIT, AppVeyor: APPVEYOR_REPO_COMMIT, CircleCI: CIRCLE_SHA1
-                        //i.Release = "RELEASE ID"; // Could be also the be like: 2.0 or however your version your app
 
-                        i.MaxBreadcrumbs = 200;
+                    // Tracks the release which sent the event and enables more features: https://docs.sentry.io/learn/releases/
+                    // If not explicitly set here, the SDK attempts to read it from: AssemblyInformationalVersionAttribute and AssemblyVersion
+                    // TeamCity: %build.vcs.number%, VSTS: BUILD_SOURCEVERSION, Travis-CI: TRAVIS_COMMIT, AppVeyor: APPVEYOR_REPO_COMMIT, CircleCI: CIRCLE_SHA1
+                    // o.Release = "b2946b7e477e1b63dd24db3db4bfdd602e302eec"; // Could be also the be like: 2.0 or however your version your app
 
-                        i.Http(h =>
-                        {
-                            //h.Proxy = new WebProxy("https://localhost:3128");
+                    o.MaxBreadcrumbs = 200;
 
-                            // Example: Disabling support to compressed responses:
-                            h.DecompressionMethods = DecompressionMethods.None;
-                        });
+                    //o.HttpProxy = new WebProxy("https://localhost:3128");
 
-                        i.Worker(w =>
-                        {
-                            w.MaxQueueItems = 100;
-                            w.ShutdownTimeout = TimeSpan.FromSeconds(5);
-                        });
-                    });
+                    // Example: Disabling support to compressed responses:
+                    o.DecompressionMethods = DecompressionMethods.None;
+
+                    o.MaxQueueItems = 100;
+                    o.ShutdownTimeout = TimeSpan.FromSeconds(5);
 
                     // Hard-coding here will override any value set on appsettings.json:
-                    options.Logging.MinimumEventLevel = LogLevel.Error;
+                    o.MinimumEventLevel = LogLevel.Error;
                 })
                 .Build();
     }
