@@ -1,48 +1,49 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+<link rel="stylesheet" type="text/css" href="css/site.css" />
 
-<div class="row">
-    <div class="col-md-3">
-        <h2>Post the form!</h2>
+<br><br><br>
+<br><br><br>
+<script>
+    postJson = () =>
+        $.ajax({
+            url: "/Home/PostIndex",
+            type: "POST",
+            data: $("#json").val(),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            error: f => alert("Response: " + f.status)
+        });
+</script>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-danger">
+        <h3>ERRORS</h3>
+    </li>
+    <li class="list-group-item">
+        <h3>Post Index Handled</h3>
         <form method="post" asp-action="PostIndex">
-            Write some stuff:
-            <input type="text" name="first-field"><br><br>
-            More here:<br>
-            <input type="text" name="second-field"><br><br>
+            <input type="text" name="username" placeholder="username">
+            <input type="text" name="company-name" placeholder="company name">
             <button>Crash with a form submission!</button>
         </form>
-    </div>
-    <div class="col-md-3">
-        <h2>Post the form! (Unhandled exception)</h2>
+    </li>
+     <li class="list-group-item">
+        <h3>Post Index Unhandled</h3>
         <form method="post" asp-action="PostIndexUnhandled">
-            Write some stuff:
-            <input type="text" name="first-field"><br><br>
-            More here:<br>
-            <input type="text" name="second-field"><br><br>
+            <input type="text" name="username" placeholder="username">
+            <input type="text" name="company-name" placeholder="company name">
             <button>Crash with a form submission!</button>
         </form>
-    </div>
-    <div class="col-md-3">
-        <h2>JSON via AJAX</h2>
-        <script>
-            postJson = () =>
-                $.ajax({
-                    url: "/Home/PostIndex",
-                    type: "POST",
-                    data: $("#json").val(),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    error: f => alert("Response: " + f.status)
-                });
-        </script>
+    </li>
+    <li class="list-group-item">
+        <h3>JSON via AJAX</h3>
         <textarea rows="6" id="json">
-{
-    "a": "b",
-    "c": [ { "d": "e",
-           "f": "g" } ]
-}
-</textarea>
+            {
+                "a": "b",
+                "c": [ { "d": "e",
+                    "f": "g" } ]
+            }
+        </textarea>
         <button onclick="postJson()">Crash with XHR JSON!</button>
-    </div>
-</div>
+    </li>
+</ul>

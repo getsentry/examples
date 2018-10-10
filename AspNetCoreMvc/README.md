@@ -1,6 +1,14 @@
+=======
 To run this sample, edit [appsettings.json](appsettings.json) and **set your DSN** to see the events in Sentry.
 
-Check [Program.cs](Program.cs) to see some customization done via the `WebHostBuilder`.
+Running the Demo
+1. Configure your DSN in [appsettings.json](appsettings.json)
+2. Configure your org slug and project slug in [deploy.ps1](deploy.ps1)
+3. Run `./deploy.ps1` from PowerShell.
+
+![Alt Text](configure-launch-demo.gif)
+
+Check [Program.cs](Program.cs) to see some Sentry customization done via the `WebHostBuilder`.
 
 ### In this sample we demonstrate the following:
 
@@ -11,4 +19,4 @@ Check [Program.cs](Program.cs) to see some customization done via the `WebHostBu
 * Capturing an exception manually via an injected `IHub`. (See `HomeController.cs` `Contact` action.)
 * Captures an unhandled exception coming from a view (See `About.cshtml` which throws an exception that goes through the `SpecialExceptionProcessor.cs`)
 * Including the request payload with the event (done via appsettings.json `IncludeRequestPayload`)
-* Sentry commits/releases integration using `sentry-cli` (done in Makefile)
+* Sentry commits/releases integration using `sentry-cli` (done in deploy.ps1)
