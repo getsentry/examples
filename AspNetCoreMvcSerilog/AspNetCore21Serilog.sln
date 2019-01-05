@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27825.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore21Serilog", "AspNetCore21Serilog.csproj", "{2F97B251-5A7C-4174-BE14-D0E0446AB549}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sentry.Serilog", "..\..\sentry-dotnet\src\Sentry.Serilog\Sentry.Serilog.csproj", "{202FBCF9-8D61-434C-9931-112638CF39B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sentry", "..\..\sentry-dotnet\src\Sentry\Sentry.csproj", "{14F21A2F-E349-4E0D-A689-DBA642563094}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sentry.AspNetCore", "..\..\sentry-dotnet\src\Sentry.AspNetCore\Sentry.AspNetCore.csproj", "{1A7C56BA-0A6A-4637-99EA-F80D4F30827A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sentry.Extensions.Logging", "..\..\sentry-dotnet\src\Sentry.Extensions.Logging\Sentry.Extensions.Logging.csproj", "{83DAF4D8-BAE3-4870-A00B-9EC15B9B0536}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{2F97B251-5A7C-4174-BE14-D0E0446AB549}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F97B251-5A7C-4174-BE14-D0E0446AB549}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F97B251-5A7C-4174-BE14-D0E0446AB549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{202FBCF9-8D61-434C-9931-112638CF39B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202FBCF9-8D61-434C-9931-112638CF39B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202FBCF9-8D61-434C-9931-112638CF39B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202FBCF9-8D61-434C-9931-112638CF39B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F21A2F-E349-4E0D-A689-DBA642563094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F21A2F-E349-4E0D-A689-DBA642563094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F21A2F-E349-4E0D-A689-DBA642563094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F21A2F-E349-4E0D-A689-DBA642563094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7C56BA-0A6A-4637-99EA-F80D4F30827A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7C56BA-0A6A-4637-99EA-F80D4F30827A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7C56BA-0A6A-4637-99EA-F80D4F30827A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7C56BA-0A6A-4637-99EA-F80D4F30827A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DAF4D8-BAE3-4870-A00B-9EC15B9B0536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DAF4D8-BAE3-4870-A00B-9EC15B9B0536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DAF4D8-BAE3-4870-A00B-9EC15B9B0536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DAF4D8-BAE3-4870-A00B-9EC15B9B0536}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

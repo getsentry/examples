@@ -10,22 +10,23 @@ namespace AspNetCore21Serilog
 {
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            // Serilog configured as per their docs at: https://github.com/serilog/serilog-aspnetcore
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-                .Enrich.FromLogContext()
-                .WriteTo.Console()
-                .CreateLogger();
-
-            CreateWebHostBuilder(args).Build().Run();
-        }
+        public static void Main(string[] args) => CreateWebHostBuilder(args).Build().Run();
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-
+                .UseSerilog((h, c) =>
+                    c.Enrich.FromLogContext()
+                        .MinimumLevel.Debug()
+                        .WriteTo.Console()
+                        // Add Sentry integration with Serilog
+                        // Two levels are used to configure it.
+                        // One sets which log level is minimally required to keep a log message as breadcrumbs
+                        // The other sets the minimum level for messages to be sent out as events to Sentry
+                        .WriteTo.Sentry(s =>
+                        {
+                            s.MinimumBreadcrumbLevel = LogEventLevel.Debug;
+                            s.MinimumEventLevel = LogEventLevel.Error;
+                        }))
                 // Example integration with advanced configuration scenarios:
                 .UseSentry(options =>
                 {
