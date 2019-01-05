@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Sentry.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="Sentry.AspNetCore" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
