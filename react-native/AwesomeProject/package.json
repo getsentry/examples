@@ -9,7 +9,7 @@
   "dependencies": {
     "babel-preset-react-native": "^4.0.0",
     "react": "16.3.1",
-    "react-native": "0.55.3",
+    "react-native": "^0.58.0",
     "react-native-sentry": "https://github.com/getsentry/react-native-sentry"
   },
   "devDependencies": {
