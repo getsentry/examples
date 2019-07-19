@@ -1,13 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.ComponentModel.Design;
 using System.Web.Http;
 
-namespace AspNetOwinWebApi.Controllers
+public class DefaultController : ApiController
 {
-    public class DefaultController : ApiController
-    {
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-    }
+    public void Get() => throw new CheckoutException("check it out");
 }

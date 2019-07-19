@@ -23,3 +23,8 @@ This will change once the Serilog Sink for Sentry is implemented.
 
 ASP.NET MVC 5 with Entity Framework 6 targeting .NET Framework 4.6.2
 This sample demonstrates the package that integrates with EF6 to send the queries as breadcrumbs.
+
+### AspNetOwinWebApi
+
+ASP.NET Web API 2 (OWIN)
+Integration of an OWIN app with a middleware and a ExceptionHandler. Reads data from the request into the event.
