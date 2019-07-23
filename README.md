@@ -14,9 +14,7 @@ All the features you'll see in action in these samples are ready to be used in y
 ### AspNetCoreMvcSerilog 
 
 ASP.NET Core MVC 2.1 running on the CoreCLR.
-It also includes Serilog which replaces the standard ASP.NET Core logging backend.
-That means the default behavior (when not using Serilog) of getting the request's logs as breadcrumbs do not happen.
-This will change once the Serilog Sink for Sentry is implemented.
+It also includes Serilog and Sentry's integration with Serilog.
 
 
 ### AspNetMvc5Ef6
