@@ -25,4 +25,5 @@ This sample demonstrates the package that integrates with EF6 to send the querie
 ### AspNetOwinWebApi
 
 ASP.NET Web API 2 (OWIN)
-Integration of an OWIN app with a middleware and a ExceptionHandler. Reads data from the request into the event.
+Integration of an OWIN app with a middleware and a ExceptionHandler. Reads data from the request into the event. 
+It also demonstrates how to capture exceptions that were handled by user code (`FirstChanceException`). Request data is also included as it's added via `SentryEventProcessor` in the `SentryMiddleware`.
