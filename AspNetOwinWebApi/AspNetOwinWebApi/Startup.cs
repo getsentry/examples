@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
 using Microsoft.Owin.BuilderProperties;
 using Owin;
@@ -14,6 +15,12 @@ namespace AspNetOwinWebApi
             var flush = SentrySdk.Init("https://5fd7a6cda8444965bade9ccfd3df9882@sentry.io/1188141");
             var properties = new AppProperties(app.Properties);
             properties.OnAppDisposing.Register(() => flush.Dispose());
+
+            AppDomain.CurrentDomain.FirstChanceException += (sender, args) =>
+            {
+                // ALL exceptions go through this callback before reaching your catch blocks!
+                SentrySdk.CaptureException(args.Exception);
+            };
 
             var config = new HttpConfiguration();
             config.MapHttpAttributeRoutes();
