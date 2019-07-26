@@ -27,25 +27,42 @@ namespace AspNetOwinWebApi
 
         public async Task Invoke(IDictionary<string, object> environment)
         {
-            try
+            using (SentrySdk.PushScope())
             {
-                await _next(environment);
-            }
-            catch (Exception ex)
-            {
-                // An exception thrown in the ExceptionHandler will end up here.
-                var owinContext = new OwinContext(environment);
-
-                SentrySdk.CaptureEvent(new SentryEvent(ex)
+                SentrySdk.ConfigureScope(scope =>
                 {
-                    Request = new Request
+                    // Gets called if an event is sent out within this request.
+                    // By a logger.LogError or FirstChanceException
+                    scope.AddEventProcessor(@event =>
                     {
-                        QueryString = owinContext.Request.QueryString.ToString()
-                    }
+                        ApplyContext(@event, environment);
+                        return @event;
+                    });
                 });
+                try
+                {
+                    await _next(environment);
+                }
+                catch (Exception ex)
+                {
+                    // An exception thrown in the ExceptionHandler will end up here.
+                    var evt = new SentryEvent(ex);
+                    ApplyContext(evt, environment);
+                    SentrySdk.CaptureEvent(evt);
 
-                throw;
+                    throw;
+                }
             }
+        }
+
+        private static void ApplyContext(SentryEvent @event, IDictionary<string, object> env)
+        {
+            var context = new OwinContext(env);
+          
+            // Add Request data to the event here:
+            @event.Request.Url = context.Request.Uri.AbsoluteUri;
+            @event.Request.QueryString = context.Request.Headers.ToString();
+            @event.Request.QueryString = context.Request.QueryString.ToString();
         }
     }
 }
