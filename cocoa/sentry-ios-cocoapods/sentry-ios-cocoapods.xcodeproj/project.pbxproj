@@ -51,6 +51,11 @@
 		634B72741F345947007FFB87 /* sentry-ios-cocoapodsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sentry-ios-cocoapodsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		634B72781F345947007FFB87 /* sentry_ios_cocoapodsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentry_ios_cocoapodsUITests.swift; sourceTree = "<group>"; };
 		634B727A1F345947007FFB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D28EB65232FCC4300721F5A /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		7D28EB66232FCC4300721F5A /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
+		7D28EB67232FCC4300721F5A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		7D28EB68232FCC4300721F5A /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		7D28EB69232FCC4400721F5A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,11 @@
 				634B72571F345947007FFB87 /* sentry-ios-cocoapods */,
 				634B726C1F345947007FFB87 /* sentry-ios-cocoapodsTests */,
 				634B72771F345947007FFB87 /* sentry-ios-cocoapodsUITests */,
+				7D28EB66232FCC4300721F5A /* Gemfile */,
+				7D28EB65232FCC4300721F5A /* Gemfile.lock */,
+				7D28EB67232FCC4300721F5A /* Podfile */,
+				7D28EB68232FCC4300721F5A /* Podfile.lock */,
+				7D28EB69232FCC4400721F5A /* README.md */,
 				634B72561F345947007FFB87 /* Products */,
 				8EC8EA9C9D2FB72FA585EC47 /* Pods */,
 				7B290C6C0D163A0B9DB41530 /* Frameworks */,
