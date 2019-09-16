@@ -3,6 +3,5 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'sentry-ios-cocoapods' do
-    pod 'Sentry', :path => '~/Projects/sentry-cocoa'
-    # pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :subspecs => ['Core', 'KSCrash'], :tag => '3.3.3'
+    pod 'Sentry'
 end
