@@ -12,3 +12,5 @@ Open the file `sentry-ios-cocoapods.xcworkspace` with xCode 10 and change the Bu
 Project runs without issues in iOS Simulator.
 
 See `AppDelegate.swift` and `ViewController.swift` for how to acutally implement sentry features in your iOS Project.
+
+Please check the docs for more detailed information: https://docs.sentry.io/clients/cocoa
