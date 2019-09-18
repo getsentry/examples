@@ -13,20 +13,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            Client.shared = try Client(dsn: "https://663998f40e734ea59087883feda37647:306481b9f6bb4a6287b334178d9f8c71@sentry.io/4394")
-            try Client.shared?.startCrashHandler()
-            Client.logLevel = .verbose
-            Client.shared?.tags = ["a": "b"]
-            Client.shared?.extra = ["c": "d"]
-            let user = User(userId: "1234")
-            user.email = "hello@sentry.io"
-            Client.shared?.user = user
-        } catch let error {
-            print("\(error)")
-            // Wrong DSN or KSCrash not installed
-        }
+        // Examples of advanced sentry features, see AppDelegate for basic/minimal implementation
+        // check docs for details https://docs.sentry.io/clients/cocoa/
+
+        // A user, tags, and extra information can be stored on a Client.
+        // This information will be sent with every event.
+        Client.shared?.tags = ["a": "b"]
+        Client.shared?.extra = ["c": "d"]
+
+        // adds user information
+        let user = User(userId: "1234")
+        user.email = "hello@sentry.io"
+        Client.shared?.user = user
+
+        // will track every action sent from a Storyboard and every viewDidAppear from an UIViewController.
         Client.shared?.enableAutomaticBreadcrumbTracking()
+        // default max is 50
+        // Client.shared?.breadcrumbs.maxBreadcrumbs = 100
     }
     
     @IBAction func sendMessage(_ sender: Any) {
