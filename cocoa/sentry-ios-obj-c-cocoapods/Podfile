@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target 'sentry-ios-obj-c-cocoapods' do
+    pod 'Sentry' # installs sentry-cocoa from the interwebs
+    # pod 'Sentry', :path => '../../../sentry-cocoa' # github repo sentry-example and sentry-cocoa are cloned into the same dir
+end

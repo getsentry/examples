@@ -1,0 +1,18 @@
+PODS:
+  - Sentry (5.0.0):
+    - Sentry/Core (= 5.0.0)
+  - Sentry/Core (5.0.0)
+
+DEPENDENCIES:
+  - Sentry (from `../../../sentry-cocoa`)
+
+EXTERNAL SOURCES:
+  Sentry:
+    :path: "../../../sentry-cocoa"
+
+SPEC CHECKSUMS:
+  Sentry: 1279f37a5691c19b1b761f7e260bba5dab7c2311
+
+PODFILE CHECKSUM: 533fae3aa1f800a3be64134c0ba7d52c9c57ddef
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D427C72237B1F760046BAC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D427C71237B1F760046BAC8 /* AppDelegate.m */; };
+		7D427C75237B1F760046BAC8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D427C74237B1F760046BAC8 /* SceneDelegate.m */; };
+		7D427C78237B1F760046BAC8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D427C77237B1F760046BAC8 /* ViewController.m */; };
+		7D427C7B237B1F760046BAC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D427C79237B1F760046BAC8 /* Main.storyboard */; };
+		7D427C7D237B1F780046BAC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D427C7C237B1F780046BAC8 /* Assets.xcassets */; };
+		7D427C80237B1F780046BAC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D427C7E237B1F780046BAC8 /* LaunchScreen.storyboard */; };
+		7D427C83237B1F780046BAC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D427C82237B1F780046BAC8 /* main.m */; };
+		EE78CE2EC656076633B61FA4 /* Pods_sentry_ios_obj_c_cocoapods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58AB3E4BD8A6C5B21DE0775 /* Pods_sentry_ios_obj_c_cocoapods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7D427C6D237B1F760046BAC8 /* sentry-ios-obj-c-cocoapods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sentry-ios-obj-c-cocoapods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D427C70237B1F760046BAC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7D427C71237B1F760046BAC8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7D427C73237B1F760046BAC8 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		7D427C74237B1F760046BAC8 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		7D427C76237B1F760046BAC8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7D427C77237B1F760046BAC8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7D427C7A237B1F760046BAC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D427C7C237B1F780046BAC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D427C7F237B1F780046BAC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D427C81237B1F780046BAC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D427C82237B1F780046BAC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7D427C89237B202F0046BAC8 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = SOURCE_ROOT; };
+		7D427C8A237B202F0046BAC8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7D427C8B237B202F0046BAC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		A7F5318D97F1D81454EDF49E /* Pods-sentry-ios-obj-c-cocoapods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sentry-ios-obj-c-cocoapods.debug.xcconfig"; path = "Target Support Files/Pods-sentry-ios-obj-c-cocoapods/Pods-sentry-ios-obj-c-cocoapods.debug.xcconfig"; sourceTree = "<group>"; };
+		D58AB3E4BD8A6C5B21DE0775 /* Pods_sentry_ios_obj_c_cocoapods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sentry_ios_obj_c_cocoapods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70FA750E3F5CAEE9378B61F /* Pods-sentry-ios-obj-c-cocoapods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sentry-ios-obj-c-cocoapods.release.xcconfig"; path = "Target Support Files/Pods-sentry-ios-obj-c-cocoapods/Pods-sentry-ios-obj-c-cocoapods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D427C6A237B1F760046BAC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE78CE2EC656076633B61FA4 /* Pods_sentry_ios_obj_c_cocoapods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40059D3A5163F72DCB78FF63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D58AB3E4BD8A6C5B21DE0775 /* Pods_sentry_ios_obj_c_cocoapods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D427C64237B1F760046BAC8 = {
+			isa = PBXGroup;
+			children = (
+				7D427C6F237B1F760046BAC8 /* sentry-ios-obj-c-cocoapods */,
+				7D427C6E237B1F760046BAC8 /* Products */,
+				97126FBAA3CE69F6E79DD291 /* Pods */,
+				40059D3A5163F72DCB78FF63 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7D427C6E237B1F760046BAC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D427C6D237B1F760046BAC8 /* sentry-ios-obj-c-cocoapods.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D427C6F237B1F760046BAC8 /* sentry-ios-obj-c-cocoapods */ = {
+			isa = PBXGroup;
+			children = (
+				7D427C70237B1F760046BAC8 /* AppDelegate.h */,
+				7D427C71237B1F760046BAC8 /* AppDelegate.m */,
+				7D427C73237B1F760046BAC8 /* SceneDelegate.h */,
+				7D427C74237B1F760046BAC8 /* SceneDelegate.m */,
+				7D427C76237B1F760046BAC8 /* ViewController.h */,
+				7D427C77237B1F760046BAC8 /* ViewController.m */,
+				7D427C79237B1F760046BAC8 /* Main.storyboard */,
+				7D427C7C237B1F780046BAC8 /* Assets.xcassets */,
+				7D427C7E237B1F780046BAC8 /* LaunchScreen.storyboard */,
+				7D427C81237B1F780046BAC8 /* Info.plist */,
+				7D427C82237B1F780046BAC8 /* main.m */,
+				7D427C89237B202F0046BAC8 /* Gemfile */,
+				7D427C8A237B202F0046BAC8 /* Podfile */,
+				7D427C8B237B202F0046BAC8 /* README.md */,
+			);
+			path = "sentry-ios-obj-c-cocoapods";
+			sourceTree = "<group>";
+		};
+		97126FBAA3CE69F6E79DD291 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5318D97F1D81454EDF49E /* Pods-sentry-ios-obj-c-cocoapods.debug.xcconfig */,
+				E70FA750E3F5CAEE9378B61F /* Pods-sentry-ios-obj-c-cocoapods.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D427C6C237B1F760046BAC8 /* sentry-ios-obj-c-cocoapods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D427C86237B1F780046BAC8 /* Build configuration list for PBXNativeTarget "sentry-ios-obj-c-cocoapods" */;
+			buildPhases = (
+				5CBA5725F0BFEAF0B25C6A84 /* [CP] Check Pods Manifest.lock */,
+				7D427C69237B1F760046BAC8 /* Sources */,
+				7D427C6A237B1F760046BAC8 /* Frameworks */,
+				7D427C6B237B1F760046BAC8 /* Resources */,
+				8E4B60BE30C6FA8FB5D57E64 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sentry-ios-obj-c-cocoapods";
+			productName = "sentry-ios-obj-c-cocoapods";
+			productReference = 7D427C6D237B1F760046BAC8 /* sentry-ios-obj-c-cocoapods.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D427C65237B1F760046BAC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Sentry;
+				TargetAttributes = {
+					7D427C6C237B1F760046BAC8 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = 7D427C68237B1F760046BAC8 /* Build configuration list for PBXProject "sentry-ios-obj-c-cocoapods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D427C64237B1F760046BAC8;
+			productRefGroup = 7D427C6E237B1F760046BAC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D427C6C237B1F760046BAC8 /* sentry-ios-obj-c-cocoapods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D427C6B237B1F760046BAC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D427C80237B1F780046BAC8 /* LaunchScreen.storyboard in Resources */,
+				7D427C7D237B1F780046BAC8 /* Assets.xcassets in Resources */,
+				7D427C7B237B1F760046BAC8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CBA5725F0BFEAF0B25C6A84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sentry-ios-obj-c-cocoapods-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E4B60BE30C6FA8FB5D57E64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sentry-ios-obj-c-cocoapods/Pods-sentry-ios-obj-c-cocoapods-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sentry-ios-obj-c-cocoapods/Pods-sentry-ios-obj-c-cocoapods-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sentry-ios-obj-c-cocoapods/Pods-sentry-ios-obj-c-cocoapods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D427C69237B1F760046BAC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D427C78237B1F760046BAC8 /* ViewController.m in Sources */,
+				7D427C72237B1F760046BAC8 /* AppDelegate.m in Sources */,
+				7D427C83237B1F780046BAC8 /* main.m in Sources */,
+				7D427C75237B1F760046BAC8 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7D427C79237B1F760046BAC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D427C7A237B1F760046BAC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7D427C7E237B1F780046BAC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D427C7F237B1F780046BAC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D427C84237B1F780046BAC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7D427C85237B1F780046BAC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D427C87237B1F780046BAC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7F5318D97F1D81454EDF49E /* Pods-sentry-ios-obj-c-cocoapods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "sentry-ios-obj-c-cocoapods/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.sentry.sentry-ios-obj-c-cocoapods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D427C88237B1F780046BAC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E70FA750E3F5CAEE9378B61F /* Pods-sentry-ios-obj-c-cocoapods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "sentry-ios-obj-c-cocoapods/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.sentry.sentry-ios-obj-c-cocoapods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D427C68237B1F760046BAC8 /* Build configuration list for PBXProject "sentry-ios-obj-c-cocoapods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D427C84237B1F780046BAC8 /* Debug */,
+				7D427C85237B1F780046BAC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D427C86237B1F780046BAC8 /* Build configuration list for PBXNativeTarget "sentry-ios-obj-c-cocoapods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D427C87237B1F780046BAC8 /* Debug */,
+				7D427C88237B1F780046BAC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D427C65237B1F760046BAC8 /* Project object */;
+}
