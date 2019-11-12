@@ -14,25 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Create a Sentry client and start crash handler
         // this is all you need to send crash reports to your sentry account
         // see ViewController for advanced sentry features like adding user information or automatic breadcrumb tracking
         // check this link for all features https://docs.sentry.io/clients/cocoa/
-
-        do {
-            Client.shared = try Client(dsn: "___PUBLIC_DSN___") // "https://<key>@sentry.io/<project>"
-            try Client.shared?.startCrashHandler()
-
-            // sets log level for console
-            // Client.logLevel = .verbose
-        } catch let error {
-            print("\(error)")
-            // Wrong DSN or KSCrash not installed
-        }
-
+        SentrySDK.start(options: ["dsn": "___PUBLIC_DSN___"])
+        
         return true
     }
 

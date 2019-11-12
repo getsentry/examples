@@ -18,31 +18,27 @@ class ViewController: UIViewController {
 
         // A user, tags, and extra information can be stored on a Client.
         // This information will be sent with every event.
-        Client.shared?.tags = ["a": "b"]
-        Client.shared?.extra = ["c": "d"]
+        SentryHub.default().getClient().tags = ["a": "b"]
+        SentryHub.default().getClient().extra = ["c": "d"]
 
         // adds user information
         let user = User(userId: "1234")
         user.email = "hello@sentry.io"
-        Client.shared?.user = user
+        SentryHub.default().getClient().user = user
 
         // will track every action sent from a Storyboard and every viewDidAppear from an UIViewController.
-        Client.shared?.enableAutomaticBreadcrumbTracking()
+        SentryHub.default().getClient().enableAutomaticBreadcrumbTracking()
         // default max is 50
-        // Client.shared?.breadcrumbs.maxBreadcrumbs = 100
+        // SentryHub.default().getClient().breadcrumbs.maxBreadcrumbs = 100
+        
     }
     
     @IBAction func sendMessage(_ sender: Any) {
-        let event = Event(level: .debug)
-        event.message = "Test Message"
-        Client.shared?.send(event: event) { (error) in
-            // Optional callback after event has been send
-        }
+        SentrySDK.capture(message: "Text Message")
     }
     
     @IBAction func causeCrash(_ sender: Any) {
-        Client.shared?.crash()
+        SentryHub.default().getClient().crash()
     }
-    
 }
 

@@ -3,5 +3,6 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'sentry-ios-cocoapods' do
-    pod 'Sentry'
+    pod 'Sentry' # installs sentry-cocoa from the interwebs
+    # pod 'Sentry', :path => '../../../sentry-cocoa' # github repo sentry-example and sentry-cocoa are cloned into the same dir
 end
