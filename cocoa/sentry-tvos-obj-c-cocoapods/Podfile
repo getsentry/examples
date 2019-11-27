@@ -1,0 +1,10 @@
+# Uncomment the next line to define a global platform for your project
+platform :tvos, '10'
+
+target 'sentry-tvos-obj-c-cocoapods' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for sentry-tvos-obj-c-cocoapods
+  pod 'Sentry' # installs sentry-cocoa from the interwebs
+end
