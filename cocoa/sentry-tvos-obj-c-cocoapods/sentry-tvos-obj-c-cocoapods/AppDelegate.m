@@ -19,13 +19,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
+
+    NSLog(@"#################### application:didFinishLaunchingWithOptions 1");
     NSError *error = nil;
-    SentryClient *client = [[SentryClient alloc] initWithDsn:@"https://663998f40e734ea59087883feda37647@sentry.io/4394" didFailWithError:&error];
+    SentryClient *client = [[SentryClient alloc] initWithDsn:@"__DSN__" didFailWithError:&error];
     SentryClient.sharedClient = client;
     [SentryClient.sharedClient startCrashHandlerWithError:&error];
     if (nil != error) {
         NSLog(@"%@", error);
     }
+    NSLog(@"#################### application:didFinishLaunchingWithOptions 2");
 
     return YES;
 }

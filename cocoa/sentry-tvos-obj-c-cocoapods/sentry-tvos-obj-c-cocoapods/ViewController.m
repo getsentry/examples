@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+@import Sentry;
 
 @interface ViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"#################### viewDidLoad");
+}
+- (IBAction)crashButton:(id)sender {
+    NSLog(@"#################### crashButton");
+    [SentryClient.sharedClient crash];
 }
 
 

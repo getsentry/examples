@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,6 @@
 				DFB6D649C8F2650C20AEC836 /* Pods-sentry-tvos-obj-c-cocoapods.debug.xcconfig */,
 				71EAE26EAE2DDF3B75AD36AD /* Pods-sentry-tvos-obj-c-cocoapods.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -108,6 +107,7 @@
 				7D2736FD238E9DF700EFE602 /* Frameworks */,
 				7D2736FE238E9DF700EFE602 /* Resources */,
 				DA60B7DF76BE87E9EC2CA499 /* [CP] Embed Pods Frameworks */,
+				7DB3A682238EA13300A2D442 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -164,6 +164,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7DB3A682238EA13300A2D442 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=sentry-test\nexport SENTRY_PROJECT=sentry-ios-test\nexport SENTRY_AUTH_TOKEN=TOKEN\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
 		A07C2BAC7009EDE50501D47A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
