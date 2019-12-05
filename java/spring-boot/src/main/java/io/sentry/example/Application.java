@@ -18,7 +18,7 @@ public class Application {
     Register a HandlerExceptionResolver that sends all exceptions to Sentry
     and then defers all handling to the other HandlerExceptionResolvers.
 
-    You should only register this is you are not using a logging integration,
+    You should only register this if you are not using a logging integration,
     otherwise you may double report exceptions.
      */
     @Bean
