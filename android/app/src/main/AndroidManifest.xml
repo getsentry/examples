@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="io.sentry.sentry_android_example">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- in order to support minSdk=14 -->
+    <uses-sdk tools:overrideLibrary="io.sentry.android" />
+
+    <!-- add extra permission (optional) -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -10,7 +14,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -20,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- set Sentry DSN -->
+        <meta-data android:name="io.sentry.dsn" android:value="___PUBLIC_DSN___" />
     </application>
 
 </manifest>
