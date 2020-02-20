@@ -1,17 +1,15 @@
 package io.sentry.sentry_android_example;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import io.sentry.Sentry;
-import io.sentry.android.AndroidSentryClientFactory;
-import io.sentry.event.BreadcrumbBuilder;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import io.sentry.core.Sentry;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,36 +17,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Context ctx = this.getApplicationContext();
-        // Use the Sentry DSN (client key) from the Project Settings page on Sentry
-        String sentryDsn = "noop://localhost";
-
-        // Initialize the Sentry client
-        Sentry.init(sentryDsn, new AndroidSentryClientFactory(ctx));
-
-        // Record a breadcrumb that will be sent with the next event(s)
-        Sentry.record(
-                new BreadcrumbBuilder().setMessage("User made an action").build()
-        );
+        // Add a breadcrumb that will be sent with the next event(s)
+        Sentry.addBreadcrumb("User made an action");
 
         // Manually catch and send an exception
         try {
             int x = 1 / 0;
         } catch (Exception e) {
-            Sentry.capture(e);
+            Sentry.captureException(e);
         }
 
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Clicking this will throw an unhandled exception that Sentry will send to the Sentry server
-                throw new RuntimeException("Button press caused an exception!");
-            }
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
+            // Clicking this will throw an unhandled exception that Sentry will send to the Sentry server
+            throw new RuntimeException("Button press caused an exception!");
         });
     }
 

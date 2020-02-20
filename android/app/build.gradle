@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
 
+// how to apply the sentry android gradle plugin plugin
+// apply plugin: 'io.sentry.android.gradle'
+
 android {
-    compileSdkVersion 23
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "io.sentry.sentry_android_example"
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdkVersion 14
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
     }
@@ -17,12 +20,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
 
+// how to configure the sentry android gradle plugin
+// sentry {
+    // Disables or enables the automatic configuration of Native Symbols
+    // uploadNativeSymbols true
+
+    // Does or doesn't include the source code of native code for Sentry.
+    // includeNativeSources true
+// }
+
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'io.sentry:sentry-android:1.7.5'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0-rc02'
+    implementation 'io.sentry:sentry-android:2.0.0'
 }
