@@ -1,23 +1,52 @@
 apply plugin: 'com.android.application'
 
 // how to apply the sentry android gradle plugin plugin
-// apply plugin: 'io.sentry.android.gradle'
+apply plugin: 'io.sentry.android.gradle'
+
+// how to apply the native bundle plugin
+apply plugin: 'com.ydq.android.gradle.native-aar.import'
 
 android {
     compileSdkVersion 29
     buildToolsVersion '29.0.3'
 
     defaultConfig {
-        applicationId "io.sentry.sentry_android_example"
+        applicationId "io.sentry.sample"
         minSdkVersion 14
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                arguments.add(0, "-DANDROID_STL=c++_static")
+            }
+        }
+
+        ndk {
+            abiFilters("x86", "armeabi-v7a", "x86_64", "arm64-v8a")
+        }
     }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig = signingConfigs.debug // to be able to run release mode
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            setPath("CMakeLists.txt")
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile = rootProject.file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
         }
     }
 
@@ -28,17 +57,17 @@ android {
 }
 
 // how to configure the sentry android gradle plugin
-// sentry {
-    // Disables or enables the automatic configuration of Native Symbols
-    // uploadNativeSymbols true
+ sentry {
+//     Disables or enables the automatic configuration of Native Symbols
+     uploadNativeSymbols true
 
-    // Does or doesn't include the source code of native code for Sentry.
-    // includeNativeSources true
-// }
+//     Does or doesn't include the source code of native code for Sentry.
+     includeNativeSources true
+ }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0-rc02'
-    implementation 'io.sentry:sentry-android:2.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'io.sentry:sentry-android:2.0.2'
 }

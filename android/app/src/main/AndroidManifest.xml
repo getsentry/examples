@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="io.sentry.sentry_android_example">
+    package="io.sentry.sample">
 
     <!-- in order to support minSdk=14 -->
     <uses-sdk tools:overrideLibrary="io.sentry.android" />
@@ -15,9 +15,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name="io.sentry.sample.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
