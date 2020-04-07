@@ -230,3 +230,9 @@ hs_err_pid*
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.gitignore.io/api/gradle,intellij,androidstudio
+
+# NDK
+.cxx
+
+# no .idea files at all
+.idea/
