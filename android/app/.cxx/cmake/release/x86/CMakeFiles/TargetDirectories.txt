@@ -1,0 +1,3 @@
+/Users/marandaneto/Github/examples/android/app/.cxx/cmake/release/x86/CMakeFiles/rebuild_cache.dir
+/Users/marandaneto/Github/examples/android/app/.cxx/cmake/release/x86/CMakeFiles/edit_cache.dir
+/Users/marandaneto/Github/examples/android/app/.cxx/cmake/release/x86/CMakeFiles/native-sample.dir

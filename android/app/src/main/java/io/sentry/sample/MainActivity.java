@@ -1,4 +1,4 @@
-package io.sentry.sentry_android_example;
+package io.sentry.sample;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
+
+//            a custom event from C++ code
+//            NativeSample.message();
+
+//            a hardcrash from C++ code
+//            NativeSample.crash();
+
             // Clicking this will throw an unhandled exception that Sentry will send to the Sentry server
             throw new RuntimeException("Button press caused an exception!");
         });
