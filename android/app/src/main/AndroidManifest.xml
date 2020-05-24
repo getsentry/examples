@@ -9,6 +9,10 @@
     <!-- add extra permission (optional) -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- add extra permission (optional) -->
+    <!-- useful for automatic breadcrumbs on older Android OS versions -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +32,15 @@
 
         <!-- set Sentry DSN -->
         <meta-data android:name="io.sentry.dsn" android:value="___PUBLIC_DSN___" />
+
+        <!-- enable debug mode, it's disabled by default -->
+        <meta-data android:name="io.sentry.debug" android:value="true" />
+
+        <!-- enable release health, it's disabled by default -->
+        <meta-data android:name="io.sentry.session-tracking.enable" android:value="true" />
+
+        <!-- it's 30s by default, making it 5s for testing -->
+        <meta-data android:name="io.sentry.session-tracking.timeout-interval-millis" android:value="5000" />
     </application>
 
 </manifest>
