@@ -1,2 +1,2 @@
-django==1.11.8
+django==1.11.29
 raven==6.4.0
