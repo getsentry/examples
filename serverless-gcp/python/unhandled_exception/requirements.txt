@@ -1,0 +1,3 @@
+# Function dependencies, for example:
+# package>=version
+sentry_sdk==0.14.4
