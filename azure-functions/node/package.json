@@ -1,0 +1,15 @@
+{
+  "name": "azure_function",
+  "version": "1.0.0",
+  "description": "Azure cloud function",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@sentry/node": "^5.17.0"
+  },
+  "devDependencies": {},
+  "author": "Sentry",
+  "license": "MIT"
+}

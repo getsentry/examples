@@ -1,0 +1,2 @@
+azure-functions
+sentry_sdk==0.14.4
