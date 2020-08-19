@@ -10,11 +10,12 @@
 # Import Sentry library
 import sentry_sdk
 import requests
-from sentry_sdk.integrations.serverless import serverless_function
+from sentry_sdk.integrations.gcp import GcpIntegration
 
 # Configure Sentry SDK
 sentry_sdk.init(
-    dsn="<your DSN>"
+    dsn="<your DSN>",
+    integrations=GcpIntegration()]
 )
 
 # Constants
@@ -23,7 +24,6 @@ WRONG_IP = "192.0.2.1" # Dummy IP which does not exist
 WRONG_URL = "http://" + WRONG_IP + ":" + CORRECT_PORT
 API = "/test" # Dummy API
 
-@serverless_function
 def cloud_handler(event, context):
     """Cloud function which does REST API calls and returns url.
     Args:

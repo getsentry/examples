@@ -18,8 +18,9 @@
 ##### 3. Go to any folder and edit the python source file. Edit below section of the file where you replace 'dsn' with your own DSN. 
 ```
 sentry_sdk.init(
-    dsn="<your DSN>"
-) 
+    dsn="<your DSN>",
+    integrations=GcpIntegration()]
+)
 ```
 
 ##### 4. Zip the contents of the folder so that it can be uploaded to cloud function. 
