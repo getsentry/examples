@@ -7,14 +7,14 @@
 
 # Import Sentry library
 import sentry_sdk
-from sentry_sdk.integrations.serverless import serverless_function
+from sentry_sdk.integrations.gcp import GcpIntegration
 
 # Configure Sentry SDK
 sentry_sdk.init(
-    dsn="<your DSN>"
+    dsn="<your DSN>",
+    integrations=GcpIntegration()]
 )
 
-@serverless_function
 def cloud_handler(event, context):
     """Cloud function which raises an exception
     Args:

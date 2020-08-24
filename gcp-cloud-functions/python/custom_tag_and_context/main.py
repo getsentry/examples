@@ -8,20 +8,21 @@
 
 # Import Sentry library
 import sentry_sdk
-from sentry_sdk.integrations.serverless import serverless_function
+from sentry_sdk.integrations.gcp import GcpIntegration
 from sentry_sdk import configure_scope
 
 import os
 
 # Configure Sentry SDK
 sentry_sdk.init(
-    dsn="<your DSN>"
+    dsn="<your DSN>",
+    integrations=GcpIntegration()]
 )
 
 # Fetching value of Environment variable set in Lambda function
 env_var_value = os.environ['ENV_VAR']
 
-@serverless_function
+
 def cloud_handler(event, context):
     """Cloud function which raises an exception and creates Custom tag &
     context.

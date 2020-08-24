@@ -11,11 +11,12 @@
 import json
 import sentry_sdk
 import requests
-from sentry_sdk.integrations.serverless import serverless_function
+from sentry_sdk.integrations.gcp import GcpIntegration
 
 # Configure Sentry SDK
 sentry_sdk.init(
-    dsn="<your DSN>"
+    dsn="<your DSN>",
+    integrations=GcpIntegration()]
 )
 
 # Constants
@@ -23,7 +24,6 @@ WRONG_PORT = "89" # Correct PORT : 80
 CORRECT_URL = "http://sentry.io" # Public URL for REST API calls.
 API = "/api/0/"
 
-@serverless_function
 def cloud_handler(event, context):
     """Cloud function which does REST API calls ond returns url.
     Args:
