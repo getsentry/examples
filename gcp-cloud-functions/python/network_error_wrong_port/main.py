@@ -16,7 +16,7 @@ from sentry_sdk.integrations.gcp import GcpIntegration
 # Configure Sentry SDK
 sentry_sdk.init(
     dsn="<your DSN>",
-    integrations=GcpIntegration()]
+    integrations=[GcpIntegration()],
 )
 
 # Constants
@@ -37,7 +37,7 @@ def cloud_handler(event, context):
     headers = {}
 
     url = CORRECT_URL + ":" + WRONG_PORT + API
-    
+
     response = get_call_api(url, payload, headers)
     response_code = response.status_code
     try:

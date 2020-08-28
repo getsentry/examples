@@ -12,7 +12,7 @@ from sentry_sdk.integrations.gcp import GcpIntegration
 # Configure Sentry SDK
 sentry_sdk.init(
     dsn="<your DSN>",
-    integrations=GcpIntegration()]
+    integrations=[GcpIntegration()],
 )
 
 def cloud_handler(event, context):
