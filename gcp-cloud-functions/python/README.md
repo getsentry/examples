@@ -6,24 +6,24 @@
 
  - Create development package from the source code
  - Upload the file into the GCP Cloud console
- - Refer usage for use case specific handling 
+ - Refer usage for use case specific handling
 
 
-## Create a development package 
+## Create a development package
 
 ##### 1. Clone the git repo on your development machine
 
-##### 2. Cloned repo contains multiple folders, each of these folder contains an example of how we can capture errors/exceptions on sentry dashboard 
+##### 2. Cloned repo contains multiple folders, each of these folder contains an example of how we can capture errors/exceptions on sentry dashboard
 
-##### 3. Go to any folder and edit the python source file. Edit below section of the file where you replace 'dsn' with your own DSN. 
+##### 3. Go to any folder and edit the python source file. Edit below section of the file where you replace 'dsn' with your own DSN.
 ```
 sentry_sdk.init(
     dsn="<your DSN>",
-    integrations=GcpIntegration()]
+    integrations=[GcpIntegration()],
 )
 ```
 
-##### 4. Zip the contents of the folder so that it can be uploaded to cloud function. 
+##### 4. Zip the contents of the folder so that it can be uploaded to cloud function.
 ```html
 $zip -r filename.zip *
 ```
@@ -61,7 +61,7 @@ b) Timeout : 1 min
 This function contains code that instruments the network error using different scenarios.
 
 >**Scenario: Wrong IP address**
- 
+
 In this scenario, we put the wrong IP address.
 
 ##### Configuration: Set the following parameters in cloud function dashboard for wrong IP address scenario:
@@ -72,13 +72,13 @@ b) Timeout : 2 min 30 sec
 ```
 
 >**Scenario: Wrong PORT number**
- 
+
 In this scenario, we put the wrong PORT number.
 
 ##### Configuration: Set the following parameters in cloud function dashboard for wrong PORT number scenario:
 
 ```html
-a) Function to execute : cloud_handler 
+a) Function to execute : cloud_handler
 b) Timeout : 2 min 30 sec
 ```
 
