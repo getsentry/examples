@@ -16,7 +16,8 @@ import os
 # Configure Sentry SDK
 sentry_sdk.init(
     dsn="<your DSN>",
-    integrations=[AwsLambdaIntegration()]
+    integrations=[AwsLambdaIntegration()],
+    traces_sample_rate=1.0,
 )
 
 # Fetching value of Environment variable set in Lambda function

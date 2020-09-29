@@ -16,6 +16,7 @@ from sentry_sdk.integrations.gcp import GcpIntegration
 sentry_sdk.init(
     dsn="<your DSN>",
     integrations=[GcpIntegration()],
+    traces_sample_rate=1.0
 )
 
 # Constants
