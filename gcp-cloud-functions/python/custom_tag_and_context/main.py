@@ -17,6 +17,7 @@ import os
 sentry_sdk.init(
     dsn="<your DSN>",
     integrations=[GcpIntegration()],
+    traces_sample_rate=1.0
 )
 
 # Fetching value of Environment variable set in Lambda function

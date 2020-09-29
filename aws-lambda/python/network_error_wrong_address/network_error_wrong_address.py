@@ -15,7 +15,8 @@ import requests
 # Configure Sentry SDK
 sentry_sdk.init(
     dsn="<your DSN>",
-    integrations=[AwsLambdaIntegration()]
+    integrations=[AwsLambdaIntegration()],
+    traces_sample_rate=1.0
 )
 
 # Constants
