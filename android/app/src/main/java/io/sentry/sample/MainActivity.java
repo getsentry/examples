@@ -9,7 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import io.sentry.core.Sentry;
+import io.sentry.Sentry;
 
 public class MainActivity extends AppCompatActivity {
 

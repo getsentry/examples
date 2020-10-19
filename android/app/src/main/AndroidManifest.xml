@@ -36,9 +36,6 @@
         <!-- enable debug mode, it's disabled by default -->
         <meta-data android:name="io.sentry.debug" android:value="true" />
 
-        <!-- enable release health, it's disabled by default -->
-        <meta-data android:name="io.sentry.session-tracking.enable" android:value="true" />
-
         <!-- it's 30s by default, making it 5s for testing -->
         <meta-data android:name="io.sentry.session-tracking.timeout-interval-millis" android:value="5000" />
     </application>
