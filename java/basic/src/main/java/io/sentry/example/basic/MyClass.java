@@ -2,18 +2,14 @@ package io.sentry.example.basic;
 
 import io.sentry.Sentry;
 import io.sentry.SentryClient;
-import io.sentry.SentryClientFactory;
-import io.sentry.context.Context;
-import io.sentry.event.BreadcrumbBuilder;
-import io.sentry.event.UserBuilder;
+import io.sentry.protocol.User;
 
 public class MyClass {
     private static SentryClient sentry;
 
     public static void main(String... args) {
         /*
-        It is recommended that you use the DSN detection system, which
-        will check the environment variable "SENTRY_DSN", the Java
+        Sentry can read the DSN from the environment variable "SENTRY_DSN", the Java
         System Property "sentry.dsn", or the "sentry.properties" file
         in your classpath. This makes it easier to provide and adjust
         your DSN without needing to change your code. See the configuration
@@ -23,14 +19,9 @@ public class MyClass {
 
         // You can also manually provide the DSN to the ``init`` method.
         // String dsn = "https://<SENTRY_PUBLIC_KEY>:<SENTRY_PRIVATE_KEY>@sentry.io/<PROJECT_ID>";
-        // Sentry.init(dsn);
-
-        /*
-        It is possible to go around the static ``Sentry`` API, which means
-        you are responsible for making the SentryClient instance available
-        to your code.
-        */
-        sentry = SentryClientFactory.sentryClient();
+        // Sentry.init(options -> {
+        //     options.setDsn(dsn);
+        // });
 
         MyClass myClass = new MyClass();
         myClass.logWithStaticAPI();
@@ -51,33 +42,30 @@ public class MyClass {
         // all future events in the current context (until the context is cleared).
 
         // Record a breadcrumb in the current context. By default the last 100 breadcrumbs are kept.
-        Sentry.getContext().recordBreadcrumb(
-                new BreadcrumbBuilder().setMessage("User made an action").build()
-        );
+        Sentry.addBreadcrumb("User made an action");
 
         // Set the user in the current context.
-        Sentry.getContext().setUser(
-                new UserBuilder().setEmail("hello@sentry.io").build()
-        );
+        User user = new User();
+        user.setEmail("hello@sentry.io");
 
         // Add extra data to future events in this context.
-        Sentry.getContext().addExtra("extra", "thing");
+        Sentry.setExtra("extra", "thing");
 
         // Add an additional tag to future events in this context.
-        Sentry.getContext().addTag("tagName", "tagValue");
+        Sentry.setTag("tagName", "tagValue");
 
         /*
         This sends a simple event to Sentry using the statically stored instance
         that was created in the ``main`` method.
         */
-        Sentry.capture("This is a test");
+        Sentry.captureMessage("This is a test");
 
         try {
             unsafeMethod();
         } catch (Exception e) {
             // This sends an exception event to Sentry using the statically stored instance
             // that was created in the ``main`` method.
-            Sentry.capture(e);
+            Sentry.captureException(e);
         }
     }
 
