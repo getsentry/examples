@@ -1,0 +1,49 @@
+﻿
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+
+<br><br><br>
+<br><br><br>
+<script>
+    postJson = () =>
+        $.ajax({
+            url: "/Home/PostIndex",
+            type: "POST",
+            data: $("#json").val(),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            error: f => alert("Response: " + f.status)
+        });
+</script>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-danger">
+        <h3>ERRORS</h3>
+    </li>
+    <li class="list-group-item">
+        <h3>Post Index Handled</h3>
+        <form method="post" asp-action="PostIndex">
+            <input type="text" name="username" placeholder="username">
+            <input type="text" name="company-name" placeholder="company name">
+            <button>Crash with a form submission!</button>
+        </form>
+    </li>
+     <li class="list-group-item">
+        <h3>Post Index Unhandled</h3>
+        <form method="post" asp-action="PostIndexUnhandled">
+            <input type="text" name="username" placeholder="username">
+            <input type="text" name="company-name" placeholder="company name">
+            <button>Crash with a form submission!</button>
+        </form>
+    </li>
+    <li class="list-group-item">
+        <h3>JSON via AJAX</h3>
+        <textarea rows="6" id="json">
+            {
+                "a": "b",
+                "c": [ { "d": "e",
+                    "f": "g" } ]
+            }
+        </textarea>
+        <button onclick="postJson()">Crash with XHR JSON!</button>
+    </li>
+</ul>
