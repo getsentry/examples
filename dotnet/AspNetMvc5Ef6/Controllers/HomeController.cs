@@ -1,6 +1,8 @@
 using System;
 using System.Web.Mvc;
 using AspNetMvc5Ef6.Models;
+using Sentry;
+using Sentry.Protocol;
 
 namespace AspNetMvc5Ef6.Controllers
 {
@@ -15,6 +17,13 @@ namespace AspNetMvc5Ef6.Controllers
         [HttpPost]
         public ActionResult PostIndex(string @params)
         {
+            SentrySdk.ConfigureScope(s =>
+            {
+                s.User = new User
+                {
+                    Username = "some-user"
+                };
+            });
             try
             {
                 if (@params == null)
