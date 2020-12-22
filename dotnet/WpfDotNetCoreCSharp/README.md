@@ -8,4 +8,4 @@ Make sure to add [your own DSN](https://docs.sentry.io/product/sentry-basics/dsn
 
 ## Next steps
 
-Check out the [Sentry docs for more options of the .NET and WPF SDKs.](https://docs.sentry.io/platforms/dotnet/guides/winforms/) 
+Check out the [Sentry docs for more options of the .NET and WPF SDKs.](https://docs.sentry.io/platforms/dotnet/guides/wpf/) 
