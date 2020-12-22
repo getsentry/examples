@@ -11,11 +11,14 @@ All the features you'll see in action in these samples are ready to be used in y
 
 ## Index:
 
+### AspNetCoreMvc
+
+ASP.NET Core MVC 2.1 running on the CoreCLR.
+
 ### AspNetCoreMvcSerilog 
 
 ASP.NET Core MVC 2.1 running on the CoreCLR.
 It also includes Serilog and Sentry's integration with Serilog.
-
 
 ### AspNetMvc5Ef6
 
@@ -27,3 +30,8 @@ This sample demonstrates the package that integrates with EF6 to send the querie
 ASP.NET Web API 2 (OWIN)
 Integration of an OWIN app with a middleware and a ExceptionHandler. Reads data from the request into the event. 
 It also demonstrates how to capture exceptions that were handled by user code (`FirstChanceException`). Request data is also included as it's added via `SentryEventProcessor` in the `SentryMiddleware`.
+
+### WpfDotNetCoreCSharp
+
+WPF (Windows Presentation Foundation) Desktop Windows app, on .NET Core 3.1
+
