@@ -1,0 +1,12 @@
+[package]
+name = "actix-web"
+version = "0.1.0"
+authors = ["Aram Peres <aram.peres@wavy.fm>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sentry = "*"
+sentry-actix = "*"
+actix-web = "3"
