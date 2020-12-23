@@ -11,7 +11,7 @@ async fn failing(_req: HttpRequest) -> Result<String, Error> {
 #[actix_web::main]
 async fn main() -> io::Result<()> {
     let _guard =
-        sentry::init("https://<PUBLIC_DSN_KEY>:<PRIVATE_DSN_KEY>@sentry.io/<PROJECT_ID>");
+        sentry::init("https://<KEY>@sentry.io/<PROJECT_ID>");
 
     // Required for capturing errors with actix-web
     std::env::set_var("RUST_BACKTRACE", "1");
