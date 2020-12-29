@@ -4,10 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>sentry-spring-boot-example</artifactId>
-	<version>0.0.1</version>
 	<packaging>jar</packaging>
-
-	<name>Sentry Spring-Boot Example</name>
 
 	<parent>
 		<groupId>io.sentry.example</groupId>
@@ -15,22 +12,11 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>11</java.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>io.sentry</groupId>
-			<artifactId>sentry-spring</artifactId>
-			<version>1.7.5</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>sentry-spring-boot-starter</artifactId>
+			<version>${sentry.version}</version>
 		</dependency>
 
 		<dependency>
@@ -50,7 +36,7 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>1.5.2.RELEASE</version>
+				<version>2.4.1</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -62,6 +48,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.4.1</version>
 			</plugin>
 		</plugins>
 	</build>

@@ -5,6 +5,12 @@ node_modulesA
 # Mac OS X
 .DS_Store
 
+# Intellij
+
+.idea
+*.ipr
+*.iml
+
 # Xcode
 
 ## Build generated

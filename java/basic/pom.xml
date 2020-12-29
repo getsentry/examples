@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sentry-java-basic-example</artifactId>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>io.sentry.example</groupId>
@@ -25,17 +26,8 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
-                    <mainClass>io.sentry.example.basic.MyClass</mainClass>
-                    <cleanupDaemonThreads>false</cleanupDaemonThreads>
+                    <mainClass>sentry.example.basic.Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>

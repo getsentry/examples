@@ -1,20 +1,22 @@
 <configuration>
 
-  <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
   </appender>
 
-  <appender name="Sentry" class="io.sentry.logback.SentryAppender">
-    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-      <level>WARN</level>
-    </filter>
+  <appender name="sentry" class="io.sentry.logback.SentryAppender">
+    <!-- Demonstrates how to modify the minimum values -->
+    <!-- Default for Events is ERROR -->
+    <minimumEventLevel>WARN</minimumEventLevel>
+    <!-- Default for Breadcrumbs is INFO -->
+    <minimumBreadcrumbLevel>DEBUG</minimumBreadcrumbLevel>
   </appender>
 
-  <root level="DEBUG">
-    <appender-ref ref="Console" />
-    <appender-ref ref="Sentry"/>
+  <!-- it's important to set logger level to equal or lower than minimumBreadcrumbLevel and minimumEventLevel -->
+  <root level="debug">
+    <appender-ref ref="console"/>
+    <appender-ref ref="sentry"/>
   </root>
-
 </configuration>

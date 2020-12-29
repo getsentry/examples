@@ -1,52 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <artifactId>sentry-java-logback-example</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<artifactId>sentry-java-logback-example</artifactId>
+	<packaging>jar</packaging>
 
-  <name>sentry-java-logback-example</name>
-  <url>https://github.com/getsentry/examples</url>
+	<parent>
+		<groupId>io.sentry.example</groupId>
+		<artifactId>sentry-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-  <parent>
-    <groupId>io.sentry.example</groupId>
-    <artifactId>sentry-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+	<dependencies>
+		<dependency>
+			<groupId>io.sentry</groupId>
+			<artifactId>sentry-logback</artifactId>
+			<version>${sentry.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+	</dependencies>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sentry.version>1.7.5</sentry.version>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>io.sentry</groupId>
-      <artifactId>sentry-logback</artifactId>
-      <version>${sentry.version}</version>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.4.0</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>java</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <mainClass>io.sentry.example.Application</mainClass>
-          <cleanupDaemonThreads>false</cleanupDaemonThreads>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>sentry.example.logback.Application</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

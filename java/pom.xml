@@ -17,7 +17,10 @@
     </modules>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sentry.version>4.0.0-alpha.2</sentry.version>
+		<sentry-1.x.version>1.7.30</sentry-1.x.version>
+		<slf4j.version>1.7.22</slf4j.version>
 	</properties>
 
 	<build>
@@ -32,6 +35,26 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.4.0</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>java</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<cleanupDaemonThreads>false</cleanupDaemonThreads>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 </project>
