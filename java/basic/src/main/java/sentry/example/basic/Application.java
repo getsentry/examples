@@ -1,11 +1,10 @@
-package io.sentry.example.basic;
+package sentry.example.basic;
 
 import io.sentry.Sentry;
 import io.sentry.SentryClient;
 import io.sentry.protocol.User;
 
-public class MyClass {
-    private static SentryClient sentry;
+public class Application {
 
     public static void main(String... args) {
         /*
@@ -15,7 +14,9 @@ public class MyClass {
         your DSN without needing to change your code. See the configuration
         page for more information.
         */
-        Sentry.init();
+        Sentry.init(options -> {
+            options.setEnableExternalConfiguration(true);
+        });
 
         // You can also manually provide the DSN to the ``init`` method.
         // String dsn = "https://<SENTRY_PUBLIC_KEY>:<SENTRY_PRIVATE_KEY>@sentry.io/<PROJECT_ID>";
@@ -23,8 +24,8 @@ public class MyClass {
         //     options.setDsn(dsn);
         // });
 
-        MyClass myClass = new MyClass();
-        myClass.logWithStaticAPI();
+        Application application = new Application();
+        application.logWithStaticAPI();
     }
 
     /**
