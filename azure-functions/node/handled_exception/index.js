@@ -23,7 +23,7 @@ module.exports = async function (context, req) {
     notExistFunctionCall(); // Call undefined function.
   } catch (eroor) {
     Sentry.captureException(error); // Capture the exception in Sentry.
-    Sentry.flush(2000);
+    await Sentry.flush(2000);
   }
   context.res = {
     // status: 200, /* Defaults to 200 */
