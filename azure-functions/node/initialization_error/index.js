@@ -26,7 +26,7 @@ try {
   notExistFunction(); // Call undefined function.
 } catch (e) {
   Sentry.captureException(e); // Capture the exception in Sentry.
-  Sentry.flush(2000);
+  await Sentry.flush(2000);
 }
 
 module.exports = async function (context, req) {
