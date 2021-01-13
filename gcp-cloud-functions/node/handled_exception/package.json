@@ -1,15 +1,7 @@
 {
-  "name": "handled exception",
-  "version": "1.0.0",
-  "description": "GCP cloud function",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Sentry",
-  "license": "MIT",
+  "name": "sample-http",
+  "version": "0.0.1",
   "dependencies": {
-    "@google-cloud/pubsub": "^0.18.0",
-    "@sentry/node": "^5.17.0"
+    "@sentry/serverless": "*"
   }
 }

@@ -36,17 +36,7 @@ $zip -r filename.zip *
 
 ## Usage
 
-#### 1. Initialization error:
-
-This function contains code that instruments function initialization error. This is instrumented by calling an undefined function before invoking the handler.
-
-##### Configuration: Set the following parameters in cloud function  dashboard for Initialization error :
-
-```html
-a) Function to execute : initialization
-b) Timeout : 1 min
-```
-#### 2. Handled  exception:
+Handled  exception:
 
 This function contains code that instruments handle the exception.
 

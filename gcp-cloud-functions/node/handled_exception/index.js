@@ -1,33 +1,12 @@
-/**
- *******************************************************************************
- * File name   : index.js
- * Description : This file contains code that instruments handled exception.
- *
- *******************************************************************************
- **/
+const Sentry = require("@sentry/serverless");
 
-"use strict";
-
-// Import the Sentry module.
-const Sentry = require("@sentry/node");
-// Configure the Sentry SDK.
-Sentry.init({
-  dsn: "<Your dsn>",
+Sentry.GCPFunction.init({
+  dsn: "<Your DSN>",
+  tracesSampleRate: 1.0,
 });
 
-exports.handled_exception = (event, context) => {
-  // Handled exception using try catch block
-  try {
-    // below is the faulty code, undefinedFunction() function is not exist.
-    undefinedFunction();
-  } catch (err) {
-    console.log(err);
-    Sentry.captureException(err); // Capture the error in the Sentry dashboard.
-    Sentry.flush(2000);
-  }
-
-  return {
-    status_code: "200",
-    body: "Hello from GCP Cloud Function!",
-  };
-};
+exports.helloHttp = Sentry.GCPFunction.wrapHttpFunction((req, res) => {
+  let message = req.query.message || req.body.message || 'Hello World!';
+  throw new Error('oh, hello there!');
+  res.status(200).send(message);
+});
