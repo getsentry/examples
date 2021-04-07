@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Sentry.AspNetCore;
 using Sentry.Extensibility;
 
 namespace Sentry.Samples.AspNetCore.Mvc
@@ -29,11 +31,11 @@ namespace Sentry.Samples.AspNetCore.Mvc
 
             services.AddSingleton<IGameService, GameService>();
 
-            services.AddMvc();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -46,11 +48,14 @@ namespace Sentry.Samples.AspNetCore.Mvc
 
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
+            app.UseRouting();
+            app.UseSentryTracing();
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
