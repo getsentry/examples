@@ -13,11 +13,11 @@ All the features you'll see in action in these samples are ready to be used in y
 
 ### AspNetCoreMvc
 
-ASP.NET Core MVC 2.1 running on the CoreCLR.
+ASP.NET Core MVC 5.0 running on the CoreCLR.
 
 ### AspNetCoreMvcSerilog 
 
-ASP.NET Core MVC 2.1 running on the CoreCLR.
+ASP.NET Core MVC 5.0 running on the CoreCLR.
 It also includes Serilog and Sentry's integration with Serilog.
 
 ### AspNetMvc5Ef6
@@ -33,5 +33,5 @@ It also demonstrates how to capture exceptions that were handled by user code (`
 
 ### WpfDotNetCoreCSharp
 
-WPF (Windows Presentation Foundation) Desktop Windows app, on .NET Core 3.1
+WPF (Windows Presentation Foundation) Desktop Windows app, on .NET 5.0
 
