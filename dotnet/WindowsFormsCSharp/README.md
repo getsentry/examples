@@ -1,6 +1,6 @@
-# Sentry for Windows Presentation Foundation
+# Sentry for Windows Forms
 
-This example shows how to initalize Sentry and capture a crash of the WPF app.
+This example shows how to initalize Sentry and capture a crash of the WinForms app.
 
 Make sure to add [your own DSN](https://docs.sentry.io/product/sentry-basics/dsn-explainer/) to [Program.cs](Program.cs) to see the events in your own Sentry project.
 
