@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using AspNetCore21Serilog.Models;
+using AspNetCoreSerilog.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Sentry;
 
-namespace AspNetCore21Serilog.Controllers
+namespace AspNetCoreSerilog.Controllers
 {
     public class HomeController : Controller
     {

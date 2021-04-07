@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace AspNetCore21Serilog
+namespace AspNetCoreSerilog
 {
     public class GameService : IGameService
     {
@@ -26,7 +26,7 @@ namespace AspNetCore21Serilog
                 return (ids[0], ids[1]);
             }
             // await unwraps AggregateException and throws the first one
-            catch when (whenAll.Exception is AggregateException ae && ae.InnerExceptions.Count > 1)
+            catch when (whenAll.Exception is { } ae && ae.InnerExceptions.Count > 1)
             {
                 throw ae; // re-throw the AggregateException to capture all errors
             }

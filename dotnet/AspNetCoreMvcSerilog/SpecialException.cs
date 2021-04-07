@@ -1,6 +1,6 @@
 using System;
 
-namespace AspNetCore21Serilog
+namespace AspNetCoreSerilog
 {
     public class SpecialException : Exception
     {

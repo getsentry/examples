@@ -1,7 +1,7 @@
 using Sentry;
 using Sentry.Extensibility;
 
-namespace AspNetCore21Serilog
+namespace AspNetCoreSerilog
 {
     public class SpecialExceptionProcessor : SentryEventExceptionProcessor<SpecialException>
     {

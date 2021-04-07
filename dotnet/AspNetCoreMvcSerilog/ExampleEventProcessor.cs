@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Sentry;
 using Sentry.Extensibility;
 
-namespace AspNetCore21Serilog
+namespace AspNetCoreSerilog
 {
     public class ExampleEventProcessor : ISentryEventProcessor
     {

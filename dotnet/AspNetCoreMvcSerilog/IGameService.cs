@@ -1,4 +1,4 @@
-﻿namespace AspNetCore21Serilog
+﻿namespace AspNetCoreSerilog
 {
     public interface IGameService
     {

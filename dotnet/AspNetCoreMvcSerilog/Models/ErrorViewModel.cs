@@ -1,4 +1,4 @@
-namespace AspNetCore21Serilog.Models
+namespace AspNetCoreSerilog.Models
 {
     public class ErrorViewModel
     {
