@@ -1,4 +1,4 @@
-package io.sentry.sample;
+package io.sentry.samples;
 
 import android.os.Bundle;
 import android.view.Menu;
