@@ -54,6 +54,7 @@ namespace AspNetCoreSerilog
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSentryTracing();
 
             app.UseAuthorization();
 
