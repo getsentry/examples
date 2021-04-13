@@ -4,6 +4,7 @@ using Sentry.EntityFramework;
 using System.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Sentry.AspNet;
 
 namespace AspNetMvc5Ef6
 {
@@ -24,7 +25,10 @@ namespace AspNetMvc5Ef6
             _sentry = SentrySdk.Init(o =>
             {
                 // We store the DSN inside Web.config; make sure to use your own DSN!
-                o.Dsn = new Dsn(ConfigurationManager.AppSettings["SentryDsn"]);
+                o.Dsn = ConfigurationManager.AppSettings["SentryDsn"];
+
+                // Get ASP.NET integration
+                o.AddAspNet();
 
                 // Get Entity Framework integration
                 o.AddEntityFramework();
@@ -44,6 +48,26 @@ namespace AspNetMvc5Ef6
         {
             // Close the Sentry SDK (flushes queued events to Sentry)
             _sentry?.Dispose();
+        }
+
+        protected void Application_BeginRequest()
+        {
+            var method = Context.Request.HttpMethod;
+            var path = Context.Request.Path;
+
+            // Start a transaction that wraps the current request and bind it to the scope
+            var transaction = SentrySdk.StartTransaction(
+                $"{method} {path}",
+                "http.server"
+            );
+
+            SentrySdk.ConfigureScope(scope => scope.Transaction = transaction);
+        }
+
+        protected void Application_EndRequest()
+        {
+            // Finish the currently active span
+            SentrySdk.GetSpan()?.Finish();
         }
     }
 }
