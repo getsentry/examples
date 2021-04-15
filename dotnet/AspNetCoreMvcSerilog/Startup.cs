@@ -54,6 +54,8 @@ namespace AspNetCoreSerilog
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            // This will add Sentry performance data (spans)
             app.UseSentryTracing();
 
             app.UseAuthorization();
