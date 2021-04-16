@@ -14,6 +14,7 @@ Check [Program.cs](Program.cs) to see some Sentry customization done via the `We
 
 * Initialize the SDK via the ASP.NET Integration (Program.cs UseSentry())
 * Configure the SDK via the framework configuration system (appsettings.json, env var, etc)
+* Capture the performance data of HTTP requests (`Startup.cs#UseSentryTracing()`)
 * Using a custom `ExceptionProcessor`. (See `SpecialExceptionProcessor.cs` which takes dependencies vai DI)
 * Adding custom data to be reported with the exception (See `HomeController.cs` `PostIndex` action, the catch block adding to `Data` property of the exception)
 * Capturing an exception manually via an injected `IHub`. (See `HomeController.cs` `Contact` action.)
