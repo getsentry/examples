@@ -12,6 +12,7 @@ All necessary code for the integration is inside `Global.asax.cs`
 
 ### In this sample we demonstrate the following:
 
+* Get see the timing information of the web requests (performance monitoring)
 * Adding custom data to be reported with the exception (See `HomeController.cs` `PostIndex` action, the catch block adding to `Data` property of the exception)
 * Capturing an error which includes the EF6 queries executed in the request (see `HomeController.cs` action `ThrowEntityFramework`)
 * Capturing unhandled exceptions via `Application_Error` on `Global.asax.cs`
