@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Specialized;
 using Sentry;
 using Sentry.EntityFramework;
 using System.Configuration;
