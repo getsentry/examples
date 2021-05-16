@@ -52,17 +52,8 @@ namespace AspNetMvc5Ef6
 
         protected void Application_BeginRequest()
         {
-            var method = Context.Request.HttpMethod;
-            var path = Context.Request.Path;
-
             // Start a transaction that encompasses the current request
-            var transaction = SentrySdk.StartTransaction(
-                $"{method} {path}",
-                "http.server"
-            );
-
-            // Attach the transaction to the scope so that other operations can reference it
-            SentrySdk.ConfigureScope(scope => scope.Transaction = transaction);
+            var transaction = Context.StartSentryTransaction();
 
             // Attach transaction to the request context to finish it when the request ends
             Context.Items["__SentryTransaction"] = transaction;
