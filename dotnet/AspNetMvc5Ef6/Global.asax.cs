@@ -14,10 +14,6 @@ namespace AspNetMvc5Ef6
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-
             // We add the query logging here so multiple DbContexts in the same project are supported
             SentryDatabaseLogging.UseBreadcrumbs();
 
@@ -33,6 +29,10 @@ namespace AspNetMvc5Ef6
                 // Get Entity Framework integration
                 o.AddEntityFramework();
             });
+
+            AreaRegistration.RegisterAllAreas();
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 
         // Global error catcher
