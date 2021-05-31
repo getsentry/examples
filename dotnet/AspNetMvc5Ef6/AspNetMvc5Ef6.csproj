@@ -120,12 +120,12 @@
       <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sentry, Version=3.3.1.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0">
-      <HintPath>packages\Sentry.3.3.1\lib\net461\Sentry.dll</HintPath>
+    <Reference Include="Sentry, Version=3.4.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0">
+      <HintPath>packages\Sentry.3.4.0\lib\net461\Sentry.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sentry.AspNet, Version=3.3.1.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0">
-      <HintPath>packages\Sentry.AspNet.3.3.1\lib\net461\Sentry.AspNet.dll</HintPath>
+    <Reference Include="Sentry.AspNet, Version=3.4.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0">
+      <HintPath>packages\Sentry.AspNet.3.4.0\lib\net461\Sentry.AspNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sentry.EntityFramework, Version=3.0.3.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0">
