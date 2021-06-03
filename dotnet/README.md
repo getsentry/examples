@@ -35,3 +35,6 @@ It also demonstrates how to capture exceptions that were handled by user code (`
 
 WPF (Windows Presentation Foundation) Desktop Windows app, on .NET 5.0
 
+### UwpCSharp
+
+UWP (Universal Windows Platform) Desktop/Mobile/Xbox app, on .NET Native
