@@ -31,10 +31,10 @@ ASP.NET Web API 2 (OWIN)
 Integration of an OWIN app with a middleware and a ExceptionHandler. Reads data from the request into the event. 
 It also demonstrates how to capture exceptions that were handled by user code (`FirstChanceException`). Request data is also included as it's added via `SentryEventProcessor` in the `SentryMiddleware`.
 
-### WpfDotNetCoreCSharp
-
-WPF (Windows Presentation Foundation) Desktop Windows app, on .NET 5.0
-
 ### UwpCSharp
 
 UWP (Universal Windows Platform) Desktop/Mobile/Xbox app, on .NET Native
+
+### WpfDotNetCoreCSharp
+
+WPF (Windows Presentation Foundation) Desktop Windows app, on .NET 5.0
