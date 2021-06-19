@@ -68,3 +68,6 @@ env
 
 # Android SDK
 android/app/release/
+
+bin/
+obj/
