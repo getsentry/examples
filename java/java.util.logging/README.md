@@ -14,4 +14,4 @@ dependencies that may be run directly via `java`.
     java \
     -Djava.util.logging.config.file=src/main/resources/logging.properties \
     -cp ./target/sentry-java-jul-example-1.0-SNAPSHOT-jar-with-dependencies.jar \
-    io.sentry.example.Application
+    sentry.example.jul.Application
