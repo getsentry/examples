@@ -15,13 +15,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>io.sentry</groupId>
-			<artifactId>sentry</artifactId>
-			<version>${sentry-1.x.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-jdk14</artifactId>
-			<version>${slf4j.version}</version>
+			<artifactId>sentry-jul</artifactId>
+			<version>${sentry.version}</version>
 		</dependency>
 	</dependencies>
 

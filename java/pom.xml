@@ -18,9 +18,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sentry.version>4.0.0-alpha.2</sentry.version>
+		<sentry.version>5.0.1</sentry.version>
 		<sentry-1.x.version>1.7.30</sentry-1.x.version>
-		<slf4j.version>1.7.22</slf4j.version>
+		<slf4j.version>1.7.31</slf4j.version>
 	</properties>
 
 	<build>
