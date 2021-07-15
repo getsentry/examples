@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Xunit;
 
 var client = new HttpClient();
 WebHost.CreateDefaultBuilder(args).Configure(a => 
@@ -53,4 +54,10 @@ public class MyController : Controller
 
         return NotFound();
     }   
+}
+
+public class UnitTests
+{
+    [Fact]
+    public async Task<bool> MVC_Tunnel_Works() => true;
 }
