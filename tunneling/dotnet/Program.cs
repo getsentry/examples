@@ -28,11 +28,12 @@ WebHost.CreateDefaultBuilder(args).Configure(a =>
     })).Build().Run();
 
 // Alternative method for MVC
-public class MyController
+public class MyController : Controller
 {
     [Route("/tunnel")]
     public async Task<IActionResult> Tunnel([FromServices] IHttpClientFactory httpClientFactory)
     {
+        Request.EnableBuffering();
         var client = httpClientFactory.CreateClient();
         using var reader = new StreamReader(Request.Body);
         var header = await reader.ReadLineAsync();
