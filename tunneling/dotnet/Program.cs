@@ -15,9 +15,10 @@ WebHost.CreateDefaultBuilder(args).Configure(a =>
         context.Request.EnableBuffering();
         using var reader = new StreamReader(context.Request.Body);
         var header = await reader.ReadLineAsync();
+        var allowedHosts = new[] { "sentry.io" }; // If you self-host Sentry, add your own domain here to prevent forged attacks
         var headerJson = JsonSerializer.Deserialize<Dictionary<string, object>>(header);
         if (headerJson.TryGetValue("dsn", out var dsnString) 
-            && Uri.TryCreate(dsnString.ToString(), UriKind.Absolute, out var dsn))
+            && Uri.TryCreate(dsnString.ToString(), UriKind.Absolute, out var dsn) && allowedHosts.Contains(dsn.Host))
         {
             var projectId = dsn.AbsolutePath.Trim('/');
             context.Request.Body.Position = 0;
@@ -25,3 +26,30 @@ WebHost.CreateDefaultBuilder(args).Configure(a =>
                 new StreamContent(context.Request.Body));
         }
     })).Build().Run();
+
+// Alternative method for MVC
+public class MyController
+{
+    [Route("/tunnel")]
+    public async Task<IActionResult> Tunnel([FromServices] IHttpClientFactory httpClientFactory)
+    {
+        var client = httpClientFactory.CreateClient();
+        using var reader = new StreamReader(Request.Body);
+        var header = await reader.ReadLineAsync();
+        var headerJson = JsonSerializer.Deserialize<Dictionary<string, object>>(header);
+        var allowedHosts = new[] { "sentry.io" }; // If you self-host Sentry, add your own domain here to prevent forged attacks
+        if (headerJson.TryGetValue("dsn", out var dsnString) && Uri.TryCreate(dsnString.ToString(), UriKind.Absolute, out var dsn) && allowedHosts.Contains(dsn.Host))
+        {
+            var projectId = dsn.AbsolutePath.Trim('/');
+            Request.Body.Position = 0;
+            var responseMessage = await client.PostAsync($"https://{dsn.Host}/api/{projectId}/envelope/",
+                new StreamContent(Request.Body));
+            var ms = new MemoryStream();
+            await responseMessage.Content.CopyToAsync(ms);
+            ms.Position = 0;
+            return new FileStreamResult(ms, "application/json");
+        }
+
+        return NotFound();
+    }   
+}
