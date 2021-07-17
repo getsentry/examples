@@ -6,7 +6,7 @@ async function handler(req, res) {
   const pieces = envelope.split("\n");
 
   if (!pieces[0]) {
-    return res.status(200).json({ status: "broken_envelope" });
+    return res.status(400).json({ status: "broken_envelope" });
   }
 
   const header = JSON.parse(pieces[0]);
