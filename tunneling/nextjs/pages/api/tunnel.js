@@ -1,5 +1,6 @@
 import { withSentry } from "@sentry/nextjs";
 import axios from "axios";
+import * as url from "url";
 
 async function handler(req, res) {
   const envelope = req.body;
