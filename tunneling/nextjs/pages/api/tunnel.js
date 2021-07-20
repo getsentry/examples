@@ -12,10 +12,12 @@ async function handler(req, res) {
   const header = JSON.parse(pieces[0]);
 
   if (header.dsn) {
-    const [, , host, projectId] = header.dsn.split("/");
+    const { host, path } = url.parse(header.dsn);
+    const projectId = path.endsWith('/') ? path.slice(0, -1) : path;
     const sentryApi = `https://${host}/api/${projectId}/envelope/`;
+    
     const response = await axios.post(sentryApi, envelope);
-
+    
     return res.status(200).json(response.data);
   }
 
