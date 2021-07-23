@@ -2,5 +2,5 @@
 
 Here you find examples of how to use Sentry SDKs to capture errors from code running on AWS Lambda.
 
-- [Sentry SDK](sentry-sdk) (Manual)
-- [Serverless Framework](serverless-framework) (Automatic)
+- [Node](node)
+- [Python](python)

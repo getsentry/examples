@@ -71,3 +71,6 @@ android/app/release/
 
 bin/
 obj/
+
+# Serverless Framework
+.serverless

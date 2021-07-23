@@ -1,0 +1,23 @@
+service: sentry-python
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.7
+  lambdaHashingVersion: 20201221
+  environment:
+    SENTRY_TRACES_SAMPLE_RATE: '1.0'
+    SENTRY_DSN: ${env:SENTRY_DSN}
+
+custom:
+  layers:
+    - arn:aws:lambda:${self:provider.region}:943013980633:layer:SentryPythonServerlessSDK:6
+
+functions:
+  hello:
+    handler: sentry_sdk.integrations.init_serverless_sdk.sentry_lambda_handler
+    layers: ${self:custom.layers}
+    environment:
+      SENTRY_INITIAL_HANDLER: unhandled_exception.handler
+

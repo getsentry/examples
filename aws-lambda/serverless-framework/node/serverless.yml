@@ -1,0 +1,22 @@
+service: sentry-node
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  environment:
+    SENTRY_TRACES_SAMPLE_RATE: '1.0'
+    SENTRY_DSN: ${env:SENTRY_DSN}
+    NODE_OPTIONS: '-r @sentry/serverless/dist/awslambda-auto'
+
+custom:
+  layers:
+    - arn:aws:lambda:${self:provider.region}:943013980633:layer:SentryNodeServerlessSDK:26
+
+functions:
+  hello:
+    handler: unhandled_exception.handler
+    layers: ${self:custom.layers}
+
