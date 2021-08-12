@@ -11,12 +11,9 @@ provider:
     SENTRY_DSN: ${env:SENTRY_DSN}
     NODE_OPTIONS: '-r @sentry/serverless/dist/awslambda-auto'
 
-plugins:
-  - serverless-latest-layer-version
-
 custom:
   layers:
-    - arn:aws:lambda:${self:provider.region}:943013980633:layer:SentryNodeServerlessSDK:latest
+    - arn:aws:lambda:${self:provider.region}:943013980633:layer:SentryNodeServerlessSDK:26
 
 functions:
   hello:
