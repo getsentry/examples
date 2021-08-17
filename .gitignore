@@ -1,5 +1,5 @@
 # Node
-node_modulesA
+node_modules
 *.log
 
 # Mac OS X
@@ -71,3 +71,6 @@ android/app/release/
 
 bin/
 obj/
+
+# Serverless Framework
+.serverless
