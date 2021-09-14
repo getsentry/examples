@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
+    "@sentry/react-native": "^3.0.3",
     "react": "17.0.2",
     "react-native": "0.65.1",
     "react-native-safe-area-context": "^3.3.2",

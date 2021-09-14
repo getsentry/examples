@@ -338,6 +338,12 @@ PODS:
   - RNScreens (3.7.0):
     - React-Core
     - React-RCTImage
+  - RNSentry (3.0.3):
+    - React-Core
+    - Sentry (= 7.2.6)
+  - Sentry (7.2.6):
+    - Sentry/Core (= 7.2.6)
+  - Sentry/Core (7.2.6)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -395,6 +401,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -413,6 +420,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - Sentry
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -474,6 +482,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSentry:
+    :path: "../node_modules/@sentry/react-native"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -521,6 +531,8 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 85187f19dd9c47a7c102f9994f9d14e4dc2110de
   ReactCommon: eafed38eec7b591c31751bfa7494801618460459
   RNScreens: 2a71d74b4e530f051f5684c8111d7591176722cf
+  RNSentry: bb7db0d29123fa7e1848f4fe91cc8407aabb2195
+  Sentry: be2f8f7a63e5274cc83d0813e40c1680119c0153
   Yoga: aa0cb45287ebe1004c02a13f279c55a95f1572f4
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

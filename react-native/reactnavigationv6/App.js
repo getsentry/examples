@@ -28,6 +28,23 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import * as Sentry from '@sentry/react-native';
+
+const routingInstrumentation = new Sentry.ReactNavigationV5Instrumentation();
+
+Sentry.init({
+  dsn: 'https://d870ad989e7046a8b9715a57f59b23b5@o447951.ingest.sentry.io/5428561',
+  tracesSampleRate: 1.0,
+  integrations: [
+    new Sentry.ReactNativeTracing({
+      // Pass instrumentation to be used as `routingInstrumentation`
+      routingInstrumentation,
+      // ...
+    }),
+  ],
+  debug: true,
+});
+
 const Section = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -113,8 +130,15 @@ const SecondScreen = () => {
 const Stack = createNativeStackNavigator();
 
 function App() {
+  const navigation = React.useRef();
+
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      ref={navigation}
+      onReady={() => {
+        // Register the navigation container with the instrumentation
+        routingInstrumentation.registerNavigationContainer(navigation);
+      }}>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Second" component={SecondScreen} />
@@ -142,4 +166,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Sentry.wrap(App);

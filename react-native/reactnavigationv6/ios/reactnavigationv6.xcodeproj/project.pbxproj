@@ -185,6 +185,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				51E62507597E9CA76ADE2315 /* [CP] Embed Pods Frameworks */,
 				799BDCD5B76927451B2F6815 /* [CP] Copy Pods Resources */,
+				872A59F45C6F4C73B34954DA /* Upload Debug Symbols to Sentry */,
 			);
 			buildRules = (
 			);
@@ -263,7 +264,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "export SENTRY_PROPERTIES=sentry.properties\nexport EXTRA_PACKAGER_ARGS=\"--sourcemap-output $DERIVED_FILE_DIR/main.jsbundle.map\"\nset -e\n\nexport NODE_BINARY=node\n../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		02525FC7D7A45FAF91A228D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -337,6 +338,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactnavigationv6/Pods-reactnavigationv6-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		872A59F45C6F4C73B34954DA /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Upload Debug Symbols to Sentry";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export SENTRY_PROPERTIES=sentry.properties\n../node_modules/@sentry/cli/bin/sentry-cli upload-dsym";
 		};
 		A860D72CB4F2024248BFB783 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
