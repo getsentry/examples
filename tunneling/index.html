@@ -1,24 +1,30 @@
+<!DOCTYPE html>
 <html>
-    <!-- Min version required for this feature is 6.7.0 -->
-    <head>
-        <script
-        src="https://browser.sentry-cdn.com/6.7.1/bundle.min.js"
-        integrity="sha384-+GoWV2WnDUGsSmipBvyBrWuhW8hPa/D21fH+j3NoZxDf9RgDryqh4Ug4L+7E1nxM"
-        crossorigin="anonymous"
-      ></script>
-      <script>
-Sentry.init({
-  // TODO: Replace the following the DSN with your own:
-  dsn: "https://eb18e953812b41c3aeb042e666fd3b5c@o447951.ingest.sentry.io/5428537",
-  // Send Sentry events to my proxy endpoint /bugs which will forward it to Sentry with the DSN above
-  // This could be a relative path if you're hosting on the same server:
-  tunnel: "http://localhost:5000/bugs",
-});
-      </script>
-    </head>
-    <body>
-        <script>
-            Sentry.captureMessage("Let me learn about my bugs so I can fix them.");
-        </script>
-    </body>
+  <head>
+    <!-- Tunneling requires the Sentry JS SDK v6.7.0 or later -->
+    <script
+      src="bundle.min.js"
+      integrity="sha384-+GoWV2WnDUGsSmipBvyBrWuhW8hPa/D21fH+j3NoZxDf9RgDryqh4Ug4L+7E1nxM"
+    ></script>
+    <script>
+      // TODO: Replace the following DSN with your own:
+      const dsn = "https://d16ae2d36f9249849c7964e9a3a8a608@o447951.ingest.sentry.io/5429213";
+      Sentry.init({
+        dsn,
+        // TODO: Replace tunnel URL according to your setup.
+        // This options makes the Sentry SDK send events to the proxy endpoint /bugs which will forward the event to Sentry with the DSN above.
+        // The URL could be a relative path if you're hosting on the same server:
+        tunnel: "http://localhost:5000/bugs",
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Sentry tunneling example</h1>
+    <p>A new event with ID <code id="event-id">unknown</code> should show up in your Sentry project with DSN <code id="dsn">unknown</code></p>
+    <script>
+      const id = Sentry.captureMessage("Let me learn about my bugs so I can fix them.");
+      document.getElementById("event-id").innerText = id;
+      document.getElementById("dsn").innerText = dsn;
+    </script>
+  </body>
 </html>
