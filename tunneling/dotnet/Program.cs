@@ -9,15 +9,16 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 
 var client = new HttpClient();
-WebHost.CreateDefaultBuilder(args).Configure(a => 
+WebHost.CreateDefaultBuilder(args).Configure(a =>
     a.Run(async context =>
     {
         context.Request.EnableBuffering();
         using var reader = new StreamReader(context.Request.Body);
         var header = await reader.ReadLineAsync();
-        var allowedHosts = new[] { "sentry.io" }; // If you self-host Sentry, add your own domain here to prevent forged attacks
+        // TODO: change this according your needs
+        var allowedHosts = new[] { "oXXXXXX.ingest.sentry.io" };
         var headerJson = JsonSerializer.Deserialize<Dictionary<string, object>>(header);
-        if (headerJson.TryGetValue("dsn", out var dsnString) 
+        if (headerJson.TryGetValue("dsn", out var dsnString)
             && Uri.TryCreate(dsnString.ToString(), UriKind.Absolute, out var dsn) && allowedHosts.Contains(dsn.Host))
         {
             var projectId = dsn.AbsolutePath.Trim('/');
@@ -52,5 +53,5 @@ public class MyController : Controller
         }
 
         return NotFound();
-    }   
+    }
 }
