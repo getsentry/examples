@@ -10,6 +10,10 @@ Serve the test html:
 # Python
 
 ```
+# python 3.x
+python3 -m http.server 8132
+
+# python 2.x
 python -m SimpleHTTPServer 8132
 ```
 
