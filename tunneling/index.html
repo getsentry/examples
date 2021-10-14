@@ -8,9 +8,9 @@
     ></script>
     <script>
       // TODO: Replace the following DSN with your own:
-      let dsn = "https://d16ae2d36f9249849c7964e9a3a8a608@o447951.ingest.sentry.io/5429213";
+      const dsn = "https://d16ae2d36f9249849c7964e9a3a8a608@o447951.ingest.sentry.io/5429213";
       Sentry.init({
-        dsn: dsn,
+        dsn,
         // TODO: Replace tunnel URL according to your setup.
         // This options makes the Sentry SDK send events to the proxy endpoint /bugs which will forward the event to Sentry with the DSN above.
         // The URL could be a relative path if you're hosting on the same server:
@@ -22,7 +22,7 @@
     <h1>Sentry tunneling example</h1>
     <p>A new event with ID <code id="event-id">unknown</code> should show up in your Sentry project with DSN <code id="dsn">unknown</code></p>
     <script>
-      let id = Sentry.captureMessage("Let me learn about my bugs so I can fix them.");
+      const id = Sentry.captureMessage("Let me learn about my bugs so I can fix them.");
       document.getElementById("event-id").innerText = id;
       document.getElementById("dsn").innerText = dsn;
     </script>
