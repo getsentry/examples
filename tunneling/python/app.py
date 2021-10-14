@@ -6,8 +6,8 @@ import requests
 from flask_cors import CORS
 import logging
 
-# change this according your needs
-sentry_host = "sentry.io"
+# TODO: change this according your needs
+sentry_host = "oXXXXXX.ingest.sentry.io"
 known_project_ids = ["123456"]
 
 app = flask.Flask(__name__)
@@ -23,18 +23,18 @@ def bugs():
         dsn = urllib.parse.urlparse(header.get("dsn"))
 
         if dsn.hostname != sentry_host:
-            raise Exception("Invalid sentry host")
+            raise Exception(f"Invalid Sentry host: {dsn.hostname}")
 
         project_id = dsn.path.strip("/")
         if project_id not in known_project_ids:
-            raise Exception(f"Invalid project id: {project_id}")
+            raise Exception(f"Invalid Project ID: {project_id}")
 
         url = f"https://{sentry_host}/api/{project_id}/envelope/"
 
         requests.post(url=url, data=envelope)
     except Exception as e:
-        # handle exception in your prefered style,
-        # e.g. by logging or forwarding to sentry
+        # handle exception in your preferred style,
+        # e.g. by logging or forwarding to Sentry
         logging.exception(e)
 
     return {}
