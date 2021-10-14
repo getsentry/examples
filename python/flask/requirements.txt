@@ -3,7 +3,7 @@ click==6.7
 contextlib2==0.5.5
 Flask==0.12.2
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 MarkupSafe==1.0
 pkg-resources==0.0.0
 raven==6.2.1
