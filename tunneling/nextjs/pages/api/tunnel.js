@@ -30,7 +30,7 @@ async function handler(req, res) {
       method: "POST",
       body: envelope,
     });
-    return response.json();
+    return res.status(200).json(await response.json());
   } catch (e) {
     captureException(e);
     return res.status(400).json({ status: "invalid request" });
