@@ -23,3 +23,11 @@ python -m SimpleHTTPServer 8132
 dotnet tool install --global dotnet-serve 
 dotnet serve -o -p 8132
 ```
+
+# Using a docker image
+
+From the project [sentry_tunnel](https://github.com/gbip/sentry_tunnel), run [the docker image](https://hub.docker.com/repository/docker/sigalen/sentry_tunnel) :
+
+```
+docker run -e 'TUNNEL_REMOTE_HOST=https://sentry.example.com' -e 'TUNNEL_PROJECT_IDS=1,5' -e 'TUNNEL_IP=0.0.0.0'  sigalen/sentry_tunnel
+```
