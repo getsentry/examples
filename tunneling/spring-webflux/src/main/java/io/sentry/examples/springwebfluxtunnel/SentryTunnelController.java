@@ -123,7 +123,7 @@ public class SentryTunnelController {
       }
 
       URI uri = URI.create(dsn);
-      Integer projectId = Integer.parseInt(uri.getPath().replaceAll("/$", ""));
+      Integer projectId = Integer.parseInt(uri.getPath().replaceAll("/", ""));
 
       if (!allowedProjectIds.contains(projectId)) {
         return Mono.error(() -> new IllegalArgumentException("ProjectID not allowed " + projectId));
