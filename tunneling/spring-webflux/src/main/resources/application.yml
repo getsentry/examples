@@ -1,0 +1,4 @@
+sentry:
+  url: https://sentry.io
+  allowed-project-ids: 1,5,6
+  tunnel-path: "/telemetry"
