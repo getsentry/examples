@@ -1,5 +1,4 @@
 import { withSentry, captureException } from "@sentry/nextjs";
-import * as url from "url";
 
 // Change host appropriately if you run your own Sentry instance.
 const sentryHost = "sentry.io";
@@ -15,12 +14,12 @@ async function handler(req, res) {
 
     const header = JSON.parse(pieces[0]);
 
-    const { host, path } = url.parse(header.dsn);
+    const { host, pathname } = new URL(header.dsn);
     if (host !== sentryHost) {
       throw new Error(`invalid host: ${host}`);
     }
 
-    const projectId = path.endsWith("/") ? path.slice(0, -1) : path;
+    const projectId = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname.substring(1);
     if (!knownProjectIds.includes(projectId)) {
       throw new Error(`invalid project id: ${projectId}`);
     }
