@@ -11,24 +11,20 @@ async function handler(req, res) {
   try {
     const envelope = req.body;
     const pieces = envelope.split("\n");
-
     const header = JSON.parse(pieces[0]);
-
     const { host, pathname } = new URL(header.dsn);
+    const projectId = pathname.substring(1);
+    
     if (host !== sentryHost) {
       throw new Error(`invalid host: ${host}`);
     }
 
-    const projectId = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname.substring(1);
     if (!knownProjectIds.includes(projectId)) {
       throw new Error(`invalid project id: ${projectId}`);
     }
 
-    const url = `https://${sentryHost}/api/${projectId}/envelope/`;
-    const response = await fetch(url, {
-      method: "POST",
-      body: envelope,
-    });
+    const url = `https://${sentryHost}/api/${projectId}/envelope/`;    
+    const response = await fetch(url, { method: "POST", body: envelope });
     return response.json();
   } catch (e) {
     captureException(e);
