@@ -25,7 +25,9 @@ async function handler(req, res) {
 
     const url = `https://${sentryHost}/api/${projectId}/envelope/`;    
     const response = await fetch(url, { method: "POST", body: envelope });
-    return response.json();
+    const data = await response.json();
+
+    return res.status(200).json(data);
   } catch (e) {
     captureException(e);
     return res.status(400).json({ status: "invalid request" });
