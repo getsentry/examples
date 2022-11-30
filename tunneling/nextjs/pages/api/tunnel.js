@@ -1,5 +1,4 @@
 import { withSentry, captureException } from "@sentry/nextjs";
-import * as url from "url";
 
 // Change host appropriately if you run your own Sentry instance.
 const sentryHost = "sentry.io";
@@ -12,25 +11,26 @@ async function handler(req, res) {
   try {
     const envelope = req.body;
     const pieces = envelope.split("\n");
-
     const header = JSON.parse(pieces[0]);
-
-    const { host, path } = url.parse(header.dsn);
+    // DSNs are of the form `https://<key>@o<orgId>.ingest.sentry.io/<projectId>`
+    const { host, pathname } = new URL(header.dsn);
+    // Remove leading slash
+    const projectId = pathname.substring(1);
+    
     if (host !== sentryHost) {
       throw new Error(`invalid host: ${host}`);
     }
 
-    const projectId = path.endsWith("/") ? path.slice(0, -1) : path;
     if (!knownProjectIds.includes(projectId)) {
       throw new Error(`invalid project id: ${projectId}`);
     }
 
-    const url = `https://${sentryHost}/api/${projectId}/envelope/`;
-    const response = await fetch(url, {
-      method: "POST",
-      body: envelope,
-    });
-    return response.json();
+    const sentryIngestURL = `https://${sentryHost}/api/${projectId}/envelope/`;
+    const sentryResponse = await fetch(sentryIngestURL, { method: "POST", body: envelope });
+    
+    // Relay response from Sentry servers to front end
+    sentryResponse.headers.forEach([key, value] => res.setHeader(key, value));
+    res.status(sentryResponse.status).send(sentryResponse.body);
   } catch (e) {
     captureException(e);
     return res.status(400).json({ status: "invalid request" });
