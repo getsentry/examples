@@ -12,7 +12,9 @@ async function handler(req, res) {
     const envelope = req.body;
     const pieces = envelope.split("\n");
     const header = JSON.parse(pieces[0]);
+    // DSNs are of the form `https://<key>@o<orgId>.ingest.sentry.io/<projectId>`
     const { host, pathname } = new URL(header.dsn);
+    // Remove leading slash
     const projectId = pathname.substring(1);
     
     if (host !== sentryHost) {
@@ -23,11 +25,12 @@ async function handler(req, res) {
       throw new Error(`invalid project id: ${projectId}`);
     }
 
-    const url = `https://${sentryHost}/api/${projectId}/envelope/`;    
-    const response = await fetch(url, { method: "POST", body: envelope });
-    const data = await response.json();
-
-    return res.status(200).json(data);
+    const sentryIngestURL = `https://${sentryHost}/api/${projectId}/envelope/`;
+    const sentryResponse = await fetch(sentryIngestURL, { method: "POST", body: envelope });
+    
+    // Relay response from Sentry servers to front end
+    sentryResponse.headers.forEach([key, value] => res.setHeader(key, value));
+    res.status(sentryResponse.status).send(sentryResponse.body);
   } catch (e) {
     captureException(e);
     return res.status(400).json({ status: "invalid request" });
