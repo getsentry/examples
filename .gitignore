@@ -65,6 +65,9 @@ target/
 #Python
 .env
 env
+venv/
+.venv/
+__pycache__/
 
 # Android SDK
 android/app/release/

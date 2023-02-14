@@ -17,8 +17,8 @@ CORS(app)
 @app.route("/bugs", methods=["POST"])
 def bugs():
     try:
-        envelope = flask.request.data.decode("utf-8")
-        piece = envelope.split("\n")[0]
+        envelope = flask.request.data
+        piece = envelope.split(b"\n")[0].decode("utf-8")
         header = json.loads(piece)
         dsn = urllib.parse.urlparse(header.get("dsn"))
 
@@ -31,7 +31,7 @@ def bugs():
 
         url = f"https://{sentry_host}/api/{project_id}/envelope/"
 
-        requests.post(url=url, data=envelope)
+        requests.post(url=url, data=envelope, headers={"Content-Type": "application/x-sentry-envelope"})
     except Exception as e:
         # handle exception in your preferred style,
         # e.g. by logging or forwarding to Sentry
