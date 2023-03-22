@@ -7,10 +7,6 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 const moduleExports = {
   // Your existing module.exports
-
-  sentry: {
-    tunnelRoute: "/monitoring",
-  },
 };
 
 const SentryWebpackPluginOptions = {
@@ -23,8 +19,6 @@ const SentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
-
-  dryRun: true, // Turn off for the sake of the example
 };
 
 // Make sure adding Sentry options is the last code to run before exporting, to
