@@ -2,13 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Run
 
-
-1. Set `SENTRY_DSN` environment variable and add the value to `sentry.client.config.js`.
-2. Replace `<orgId>` in fourth line there with your Sentry organization ID.
-   
-   You can find your ID in `SENTRY_DSN` value, DSNs are of the form `https://<key>@o<orgId>.ingest.sentry.io/<projectId>`
-3. Add your project ID to `knownProjectIds` array. 
-4. Run the development server:
+Set `SENTRY_DSN` environment variable, add the value to `sentry.client.config.js` and run the development server:
 
 ```bash
 npm run dev
@@ -24,12 +18,17 @@ yarn dev
 
 ## Copy to existing project
 
-1. Copy the `pages/api/tunnel.js` file to your project
-2. Replace `<orgId>` in fourth line there with your Sentry organization ID.
+Just add the code below to your `next.config.js`:
 
-   You can find your ID in `SENTRY_DSN` value, DSNs are of the form `https://<key>@o<orgId>.ingest.sentry.io/<projectId>`
-3. Add your project ID to `knownProjectIds` array.
-4. Add `tunnel: "/api/tunnel"` to `sentry.client.config.js`.
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    // Your existing Next.js config
+    sentry: {
+        tunnelRoute: "/monitoring",
+    },
+};
+```
 
 ## Deploy on Vercel
 
