@@ -1,6 +1,6 @@
 # Sample .NET applications integrated with Sentry
 
-This repository include multiple samples using the .NET Sentry SDK. Differently than [the samples in the repository of the SDK](https://github.com/getsentry/sentry-dotnet/tree/master/samples) 
+This repository include multiple samples using the .NET Sentry SDK. Unlike [the samples in the repository of the SDK](https://github.com/getsentry/sentry-dotnet/tree/master/samples) 
 the samples here consume the SDK via NuGet.
 
 When you clone this repository and build a sample, you will not be building the SDK.
