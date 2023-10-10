@@ -1,7 +1,7 @@
 {
-    "name": "fastify-sentry-tunneling",
+    "name": "express-sentry-tunneling",
     "version": "1.0.0",
-    "description": "Example to tunnel sentry using fastify",
+    "description": "Example to tunnel sentry using expressjs",
     "author": "",
     "main": "index.js",
     "dependencies": {
