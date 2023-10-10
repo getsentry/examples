@@ -1,19 +1,19 @@
 const express = require("express");
 
-// Allow body up to 100 MB
+// Allow body up to 100 MB, regardless of Content-Type header
 const app = express();
-
+const envelopeParser = express.raw({limit: "100mb", type: () => true});
 
 //TODO: Change this to suit your needs
 const SENTRY_HOST = "oXXXXXX.ingest.sentry.io";
 const SENTRY_KNOWN_PROJECTS = ["123456"]
 
 //TODO: Put your routes here, make sure to keep the /bugs route at the end of your file
-app.post("/bugs", async (req, res) => {
+app.post("/bugs", envelopeParser, async (req, res) => {
     try {
         const envelope = req.body;
 
-        const piece = envelope.toString().split("\n")[0];
+        const piece = envelope.slice(0, envelope.indexOf("\n"));
         const header = JSON.parse(piece);
 
         const dsn = new URL(header.dsn);
